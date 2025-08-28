@@ -90,154 +90,154 @@
 	  <MauiXaml Update="Pages\Gallery\AbsoluteLayoutDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\ActivityIndicatorDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\ActivityIndicatorDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\BorderDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\BorderDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\BoxViewDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\BoxViewDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\ButtonDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\ButtonDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\CarouselViewDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\CarouselViewDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\CheckBoxPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\CheckBoxPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\CollectionViewDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\CollectionViewDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\ContentViewDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\ContentViewDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\DatePickerDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\DatePickerDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\DetailPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\DetailPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\EditorDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\EditorDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\EllipseDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\EllipseDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\EntryCellDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\EntryCellDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\EntryDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\EntryDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\First\FirstMauiPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\FlexLayoutDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\FlexLayoutDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\FlyoutPageDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\FlyoutPageDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\GraphicsViewDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\GraphicsViewDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\GridDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\GridDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\HorizontalStackLayoutDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\HorizontalStackLayoutDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\ImageButtonDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\ImageButtonDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\ImageCellDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\ImageCellDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\ImageDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\ImageDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\IndicatorViewDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\IndicatorViewDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\LineDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\LineDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\ListViewDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\ListViewDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\NavigationPageDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\NavigationPageDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\PathDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\PathDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\PickerDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\PickerDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\PolygonDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\PolygonDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\PolylineDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\PolylineDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\ProgressBarDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\ProgressBarDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\RadioButtonDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\RadioButtonDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\RectangleDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\RectangleDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\RefreshViewDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\RefreshViewDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\RelativeLayoutDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\RelativeLayoutDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\ScrollViewDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\ScrollViewDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\SearchBarDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\SearchBarDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\SliderDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\SliderDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\StackLayoutDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\StackLayoutDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\StepperDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\StepperDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\SwipeViewDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\SwipeViewDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\SwitchCellDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\SwitchCellDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\SwitchDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\SwitchDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\TableViewFormDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\TableViewFormDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\TableViewMenuDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\TableViewMenuDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\TextCellDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\TextCellDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\TimePickerDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\TimePickerDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\VerticalStackLayoutDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\VerticalStackLayoutDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\WebViewDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\WebViewDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
