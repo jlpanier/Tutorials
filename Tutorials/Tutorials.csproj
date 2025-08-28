@@ -87,7 +87,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Pages\AbsoluteLayoutDemoPage.xaml">
+	  <MauiXaml Update="Pages\Gallery\AbsoluteLayoutDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\ActivityIndicatorDemoPage.xaml">
