@@ -14,6 +14,16 @@ namespace Maui.Tutorials.Models
         // Détail des enregistrements fourni par l'appel API /data.enseignementsup-recherche.gouv.fr/explore/dataset/curiexplore-pays
 
         /// <summary>
+        /// Temporaire
+        /// </summary>
+        public string FullName => $"{Name} ({Iso3})";
+
+        /// <summary>
+        /// Image carte de la projection
+        /// </summary>
+        public string Projection => $"{Iso3.ToLower()}.png";
+
+        /// <summary>
         /// Code iso2 du pays/territoire
         /// </summary>
         public string Iso2 { get; private set; } = "";
