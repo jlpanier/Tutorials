@@ -16,7 +16,7 @@
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
 
-            <Picker Title="All"
+            <Picker Title="Select"
                 Margin="10, 0"
                 SelectedIndexChanged="OnPickerSelectedCountry">
                 <Picker.Items>
@@ -52,79 +52,86 @@
                HorizontalOptions="End" />
         </Grid>
 
-        <ListView Margin="10, 0" RowHeight="60" ItemsSource="{Binding Items}">
-            <ListView.ItemTemplate>
-                <DataTemplate x:DataType="models:Country">
-                    <ViewCell>
-                        <!-- Padding Left, Top, Right, Bottom -->
-                        <StackLayout Padding="0,10,0,10" 
-                                     Orientation="Horizontal" 
-                                     Spacing="10">
+            <ListView Margin="10,0,10,0" ItemsSource="{Binding Items}">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Country">
+                        <ViewCell >
+                            <StackLayout 
+                                Orientation="Horizontal" 
+                                Spacing="6">
 
-                            <ffimageloading:SvgCachedImage 
-                                Source="{Binding Flag}" 
-                                HeightRequest="40" WidthRequest="70" Margin="10,20,20,20"
-                                Aspect="AspectFill"
-                                HorizontalOptions="Center" VerticalOptions="Center"
-                                />
-
-                            <Grid 
-                                RowDefinitions="Auto,*" RowSpacing="10" ColumnSpacing="0">
-
-                                <Label Text="{Binding Name}"
-                                   Grid.Column="0"
-                                   Grid.Row="0"
-                                   FontSize="15"
-                                   FontAttributes="Bold"
-                                   HorizontalOptions="Start" />
+                                <ffimageloading:SvgCachedImage 
+                                    Source="{Binding Flag}" 
+                                    WidthRequest="50"
+                                    HeightRequest="50"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    />
 
                                 <StackLayout 
-                                    Orientation="Horizontal" 
-                                    Grid.Column="0"
-                                    Grid.Row="1"
-                                    Spacing="10">
+                                    WidthRequest="270"
+                                    Orientation="Vertical"
+                                    VerticalOptions="Center">
 
-                                    <Image 
-                                        Source="euro.png" 
-                                        Margin="0,0,10,00" 
-                                        IsVisible="{Binding Euro}"
-                                        />
+                                    <Label Text="{Binding Name}"
+                                        FontSize="15"
+                                        FontAttributes="Bold"
+                                        HorizontalOptions="Start" />
+                                
+                                    <StackLayout 
+                                        Orientation="Horizontal"
+                                        >
 
-                                    <Image 
-                                       Source="oecd.png" 
-                                       HeightRequest="20"
-                                       WidthRequest="50"
-                                       IsVisible="{Binding OecdMembers}"
-                                       />
+                                        <Image 
+                                            Source="euro.png" 
+                                            WidthRequest="10"
+                                            HeightRequest="10"
+                                            Margin="5,5,5,5" 
+                                            IsVisible="{Binding Euro}"
+                                            />
+                                        <Image 
+                                            Source="oecd.png" 
+                                            HeightRequest="20"
+                                            WidthRequest="50"
+                                            Margin="5,5,5,5" 
+                                            IsVisible="{Binding OecdMembers}"
+                                            />
+                                        <Image 
+                                            Source="europeunion.png" 
+                                            HeightRequest="25"
+                                            WidthRequest="50"
+                                            IsVisible="{Binding EuropeUnion}"
+                                            />
 
-                                    <Image 
-                                       Source="europeunion.png" 
-                                       HeightRequest="25"
-                                       WidthRequest="50"
-                                       IsVisible="{Binding EuropeUnion}"
-                                       />
+                                        <Image 
+                                            Source="g7.png" 
+                                            HeightRequest="25"
+                                            WidthRequest="50"
+                                            IsVisible="{Binding G7}"
+                                            />
 
-                                    <Image 
-                                       Source="g7.png" 
-                                       HeightRequest="25"
-                                       WidthRequest="50"
-                                       IsVisible="{Binding G7}"
-                                       />
+                                        <Image 
+                                            Source="g20.png" 
+                                            HeightRequest="25"
+                                            WidthRequest="50"
+                                            IsVisible="{Binding G20}"
+                                            />
 
-                                    <Image 
-                                       Source="g20.png" 
-                                       HeightRequest="25"
-                                       WidthRequest="50"
-                                       IsVisible="{Binding G20}"
-                                       />
+                                    </StackLayout>
 
                                 </StackLayout>
-                            </Grid>
 
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+                                <Image 
+                                    Source="{Binding Projection}" 
+                                    HeightRequest="40"
+                                    WidthRequest="40"
+                                    Margin="5,5,5,5" 
+                                    HorizontalOptions="End"
+                                    />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
     </StackLayout>
 </ContentPage>    
