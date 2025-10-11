@@ -241,8 +241,8 @@ namespace Maui.Tutorials.Models
             idh_group = data.idh_group;
             idh_group_countries = data.idh_group_countries;
             ue27 = data.ue27 == "True";
-            G7 = data.G7 == "True";
-            G20 = data.G20 == "True";
+            G7 = data.g7 == "True";
+            G20 = data.g20 == "True";
         }
     }
 }
