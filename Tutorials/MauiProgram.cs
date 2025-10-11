@@ -4,6 +4,7 @@ using Maui.Tutorials.ViewModels;
 using Microsoft.Extensions.Logging;
 using Maui.Tutorials.ViewModels;
 using Syncfusion.Maui.Toolkit.Hosting;
+using FFImageLoading.Maui;
 
 namespace Maui.Tutorials
 {
@@ -16,6 +17,7 @@ namespace Maui.Tutorials
                 .UseMauiApp<App>()
                 .UseMauiCommunityToolkit()
                 .ConfigureSyncfusionToolkit()
+                .UseFFImageLoading()
                 .ConfigureMauiHandlers(handlers =>
                 {
 #if IOS || MACCATALYST

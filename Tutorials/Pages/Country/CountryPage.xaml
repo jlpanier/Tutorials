@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage NavigationPage.HasNavigationBar="false"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Maui;assembly=FFImageLoading.Maui"
+             xmlns:viewmodel="clr-namespace:Maui.Tutorials.ViewModels"
+             xmlns:models="clr-namespace:Maui.Tutorials.Models"
+             x:Class="Maui.Tutorials.Pages.CountryPage"
+              >
+    <StackLayout>
+
+        <ListView Margin="10, 0" RowHeight="60" ItemsSource="{Binding Items}">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="models:Country">
+                    <ViewCell>
+                        <!-- Padding Left, Top, Right, Bottom -->
+                        <StackLayout Padding="0,10,0,10" 
+                                     Orientation="Horizontal" 
+                                     Spacing="10">
+
+                            <ffimageloading:SvgCachedImage 
+                                Source="{Binding Flag}" 
+                                HeightRequest="40" WidthRequest="70" Margin="10,20,20,20"
+                                Aspect="AspectFill"
+                                HorizontalOptions="Center" VerticalOptions="Center"
+                                />
+                            
+                            <StackLayout VerticalOptions="Center">
+                                <Label Text="{Binding Name}" FontAttributes="Bold" />
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>    

@@ -1,0 +1,4 @@
+/api/explore/v2.1/catalog/datasets/curiexplore-pays/records?limit=100
+https://data.enseignementsup-recherche.gouv.fr/api/explore/v2.1/catalog/datasets/curiexplore-pays/records?limit=20&refine=central_europe_and_the_baltics%3A%22True%22
+https://data.enseignementsup-recherche.gouv.fr/api/explore/v2.1/console
+https://data.enseignementsup-recherche.gouv.fr/explore/dataset/curiexplore-pays/information/?disjunctive.iso3

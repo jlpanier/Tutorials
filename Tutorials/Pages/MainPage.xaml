@@ -10,7 +10,7 @@
     <ContentView Padding="20">
         <TableView Intent="Menu">
             <TableRoot>
-                <TableSection Title="XAML">
+                <TableSection Title="Menu">
 
                     <TextCell Text="Composants .NET MAUI"
                          Detail="Liste des contrôles .NET MAUI"
@@ -21,6 +21,16 @@
                          Detail="Liste tata toto"
                          Command="{Binding NavigateCommand}"
                          CommandParameter="{x:Type views:FirstMauiPage}" />
+
+                    <TextCell Text="Pokemons"
+                         Detail="Liste des pokemons - https://pokeapi.co/api/V2/pokemon/1/"
+                         Command="{Binding NavigateCommand}"
+                         CommandParameter="{x:Type views:PokemonPage}" />
+
+                    <TextCell Text="Pays"
+                         Detail="Liste des pays - https://data.enseignementsup-recherche.gouv.fr/explore/dataset/curiexplore-pay"
+                         Command="{Binding NavigateCommand}"
+                         CommandParameter="{x:Type views:CountryPage}" />
 
                 </TableSection>
             </TableRoot>
