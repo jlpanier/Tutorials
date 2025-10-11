@@ -182,12 +182,12 @@ namespace CurieXplorePays
         /// <summary>
         /// Vaut True si membre du groupe des 7
         /// </summary>
-        public string G7 {get; set; }
+        public string g7 {get; set; }
 
         /// <summary>
         /// Vaut True si membre du groupe de 19
         /// </summary>
-        public string G20 {get; set; }
+        public string g20 {get; set; }
 
         /// <summary>
         /// GeoJSON du territoire

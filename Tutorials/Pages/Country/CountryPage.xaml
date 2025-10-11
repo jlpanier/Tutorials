@@ -67,10 +67,60 @@
                                 Aspect="AspectFill"
                                 HorizontalOptions="Center" VerticalOptions="Center"
                                 />
-                            
-                            <StackLayout VerticalOptions="Center">
-                                <Label Text="{Binding Name}" FontAttributes="Bold" />
-                            </StackLayout>
+
+                            <Grid 
+                                RowDefinitions="Auto,*" RowSpacing="10" ColumnSpacing="0">
+
+                                <Label Text="{Binding Name}"
+                                   Grid.Column="0"
+                                   Grid.Row="0"
+                                   FontSize="15"
+                                   FontAttributes="Bold"
+                                   HorizontalOptions="Start" />
+
+                                <StackLayout 
+                                    Orientation="Horizontal" 
+                                    Grid.Column="0"
+                                    Grid.Row="1"
+                                    Spacing="10">
+
+                                    <Image 
+                                        Source="euro.png" 
+                                        Margin="0,0,10,00" 
+                                        IsVisible="{Binding Euro}"
+                                        />
+
+                                    <Image 
+                                       Source="oecd.png" 
+                                       HeightRequest="20"
+                                       WidthRequest="50"
+                                       IsVisible="{Binding OecdMembers}"
+                                       />
+
+                                    <Image 
+                                       Source="europeunion.png" 
+                                       HeightRequest="25"
+                                       WidthRequest="50"
+                                       IsVisible="{Binding EuropeUnion}"
+                                       />
+
+                                    <Image 
+                                       Source="g7.png" 
+                                       HeightRequest="25"
+                                       WidthRequest="50"
+                                       IsVisible="{Binding G7}"
+                                       />
+
+                                    <Image 
+                                       Source="g20.png" 
+                                       HeightRequest="25"
+                                       WidthRequest="50"
+                                       IsVisible="{Binding G20}"
+                                       />
+
+                                </StackLayout>
+                            </Grid>
+
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
