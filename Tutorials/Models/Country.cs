@@ -64,7 +64,7 @@ namespace Maui.Tutorials.Models
         public string Wikidata { get; private set; } = "";
 
         /// <summary>
-        /// Appartient au processus de Bologne.
+        /// Appartient au processus de Bologne : harmoniser les systèmes d'enseignement supérieur 
         /// </summary>
         public bool Bologne { get; private set; } = false;
 
