@@ -2,6 +2,46 @@
 {
     public static class Extensions
     {
+        /// <summary>
+        /// Conversion de la latitude en text
+        /// </summary>
+        public static string ToLatitude(this double latitude) => Latitude((decimal)latitude);
+
+        /// <summary>
+        /// Conversion de la latitude en text
+        /// </summary>
+        private static string Latitude(this decimal latitude)
+        {
+            decimal l = Math.Abs(latitude);
+            int degree = (int)l;
+            decimal left = 60 * (l - degree);
+            int minutes = (int)left;
+            left = 1000 * (left - minutes);
+            int secondes = (int)left;
+            string hemisphere = latitude < 0 ? "S" : "N";
+            return $"{degree.ToString("000")}{hemisphere}{minutes.ToString("00")}.{secondes.ToString("000")}";
+        }
+
+        /// <summary>
+        /// Conversion de la longitude en text
+        /// </summary>
+        public static string ToLongitude(this double longitude) => Longitude((decimal)longitude);
+
+        /// <summary>
+        /// Conversion de la longitude en text
+        /// </summary>
+        private static string Longitude(this decimal longitude)
+        {
+            decimal l = Math.Abs(longitude);
+            int degree = (int)l;
+            decimal left = 60 * (l - degree);
+            int minutes = (int)left;
+            left = 1000 * (left - minutes);
+            int secondes = (int)left;
+            string hemisphere = longitude < 0 ? "W" : "E";
+            return $"{degree.ToString("000")}{hemisphere}{minutes.ToString("00")}.{secondes.ToString("000")}";
+        }
+
         public static string Remove(this string text, string from, string to, StringComparison comparisonType)
         {
             int start = text.IndexOf(from, comparisonType);

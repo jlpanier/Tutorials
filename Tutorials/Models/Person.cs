@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Maui.Tutorials.Models
 {
-    internal class Person
+    public class Person
     {
         public Person()
         {
