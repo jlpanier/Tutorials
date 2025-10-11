@@ -8,6 +8,49 @@
              x:Class="Maui.Tutorials.Pages.CountryPage"
               >
     <StackLayout>
+        <Label Text="Pays" FontAttributes="Bold" HorizontalOptions="Center" Padding="0,20,0,20" FontSize="20"/>
+
+        <Grid  Margin="10,0,10,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Picker Title="All"
+                Margin="10, 0"
+                SelectedIndexChanged="OnPickerSelectedCountry">
+                <Picker.Items>
+                    <x:String>All</x:String>
+                    <x:String>Arab world</x:String>
+                    <x:String>Central Europe and Baltic</x:String>
+                    <x:String>East Asia Pacific</x:String>
+                    <x:String>Europe central Asia</x:String>
+                    <x:String>Latin America caribbean</x:String>
+                    <x:String>Middle East North Africa</x:String>
+                    <x:String>North America</x:String>
+                    <x:String>Sub Saharan African</x:String>
+                    <x:String>Bologne</x:String>
+                    <x:String>OECD members</x:String>
+                    <x:String>Euro area</x:String>
+                    <x:String>European union</x:String>
+                    <x:String>UE27 member</x:String>
+                    <x:String>G7 member</x:String>
+                    <x:String>G20 member</x:String>
+                    <x:String>High income</x:String>
+                    <x:String>Upper middle income</x:String>
+                    <x:String>Lower middle income</x:String>
+                    <x:String>Low income</x:String>
+                </Picker.Items>
+            </Picker>
+
+
+            <Label Text="{Binding Nbr}"
+               Grid.Column="1"
+               Grid.Row="0"
+               FontSize="15"
+               FontAttributes="Bold"
+               HorizontalOptions="End" />
+        </Grid>
 
         <ListView Margin="10, 0" RowHeight="60" ItemsSource="{Binding Items}">
             <ListView.ItemTemplate>
