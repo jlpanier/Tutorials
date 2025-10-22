@@ -3,8 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodel="clr-namespace:Maui.Tutorials.ViewModels"
              xmlns:views="clr-namespace:Maui.Tutorials.Pages"
-             x:Class="Maui.Tutorials.Pages.MainPage"
-             Title="{Binding Today}">
+             x:Class="Maui.Tutorials.Pages.MainPage">
 
    
     <ContentView Padding="20">
