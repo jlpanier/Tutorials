@@ -1,10 +1,11 @@
 ﻿using CommunityToolkit.Maui;
+using FFImageLoading.Maui;
 using Maui.Tutorials.Pages;
 using Maui.Tutorials.ViewModels;
-using Microsoft.Extensions.Logging;
 using Maui.Tutorials.ViewModels;
+using Microsoft.Extensions.Logging;
 using Syncfusion.Maui.Toolkit.Hosting;
-using FFImageLoading.Maui;
+using Syncfusion.Maui.Core.Hosting;
 
 namespace Maui.Tutorials
 {
@@ -17,6 +18,7 @@ namespace Maui.Tutorials
                 .UseMauiApp<App>()
                 .UseMauiCommunityToolkit()
                 .ConfigureSyncfusionToolkit()
+                .ConfigureSyncfusionCore()
                 .UseFFImageLoading()
                 .ConfigureMauiHandlers(handlers =>
                 {

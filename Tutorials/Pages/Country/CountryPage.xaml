@@ -3,135 +3,158 @@
              xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Maui;assembly=FFImageLoading.Maui"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
              xmlns:viewmodel="clr-namespace:Maui.Tutorials.ViewModels"
              xmlns:models="clr-namespace:Maui.Tutorials.Models"
              x:Class="Maui.Tutorials.Pages.CountryPage"
               >
-    <StackLayout>
-        <Label Text="Pays" FontAttributes="Bold" HorizontalOptions="Center" Padding="0,20,0,20" FontSize="20"/>
+    <Grid  Padding="10" RowSpacing="10" ColumnSpacing="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
 
-        <Grid  Margin="10,0,10,0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*" />
-                <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
+        <Label 
+            Grid.ColumnSpan="2"
+            Grid.Column="0"
+            Grid.Row="0"
+            Text="Pays" 
+            FontAttributes="Bold" 
+            HorizontalOptions="Center" 
+            Padding="0,20,0,20" 
+            FontSize="20"/>
 
-            <Picker Title="Select"
-                Margin="10, 0"
-                SelectedIndexChanged="OnPickerSelectedCountry">
-                <Picker.Items>
-                    <x:String>All</x:String>
-                    <x:String>Arab world</x:String>
-                    <x:String>Central Europe and Baltic</x:String>
-                    <x:String>East Asia Pacific</x:String>
-                    <x:String>Europe central Asia</x:String>
-                    <x:String>Latin America caribbean</x:String>
-                    <x:String>Middle East North Africa</x:String>
-                    <x:String>North America</x:String>
-                    <x:String>Sub Saharan African</x:String>
-                    <x:String>Bologne</x:String>
-                    <x:String>OECD members</x:String>
-                    <x:String>Euro area</x:String>
-                    <x:String>European union</x:String>
-                    <x:String>UE27 member</x:String>
-                    <x:String>G7 member</x:String>
-                    <x:String>G20 member</x:String>
-                    <x:String>High income</x:String>
-                    <x:String>Upper middle income</x:String>
-                    <x:String>Lower middle income</x:String>
-                    <x:String>Low income</x:String>
-                </Picker.Items>
-            </Picker>
+        <Picker 
+            Grid.Column="0"
+            Grid.Row="1"
+            Title="Select"
+            Margin="10, 0"
+            SelectedIndexChanged="OnPickerSelectedCountry">
+            <Picker.Items>
+                <x:String>All</x:String>
+                <x:String>Arab world</x:String>
+                <x:String>Central Europe and Baltic</x:String>
+                <x:String>East Asia Pacific</x:String>
+                <x:String>Europe central Asia</x:String>
+                <x:String>Latin America caribbean</x:String>
+                <x:String>Middle East North Africa</x:String>
+                <x:String>North America</x:String>
+                <x:String>Sub Saharan African</x:String>
+                <x:String>Bologne</x:String>
+                <x:String>OECD members</x:String>
+                <x:String>Euro area</x:String>
+                <x:String>European union</x:String>
+                <x:String>UE27 member</x:String>
+                <x:String>G7 member</x:String>
+                <x:String>G20 member</x:String>
+                <x:String>High income</x:String>
+                <x:String>Upper middle income</x:String>
+                <x:String>Lower middle income</x:String>
+                <x:String>Low income</x:String>
+            </Picker.Items>
+        </Picker>
+
+        <Label 
+            Grid.Column="1"
+            Grid.Row="1"
+            Text="{Binding Nbr}"
+            FontSize="15"
+            FontAttributes="Bold"
+            HorizontalOptions="End" />
+
+        <syncfusion:SfListView             
+            Grid.ColumnSpan="2"
+            Grid.Column="0"
+            Grid.Row="2"
+            ItemsSource="{Binding Items}">
+            <syncfusion:SfListView.ItemTemplate >
+                <DataTemplate >
+                    <Grid Padding="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <ffimageloading:SvgCachedImage 
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Grid.RowSpan="3"
+                            Source="{Binding Flag}" 
+                            WidthRequest="50"
+                            HeightRequest="50"
+                            HorizontalOptions="Fill"
+                            VerticalOptions="Center"
+                            />
+
+                        <Label Text="{Binding Name}"
+                            Margin="10,0,10,0"
+                            Grid.ColumnSpan="4"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            FontSize="15"
+                            FontAttributes="Bold"
+                            HorizontalOptions="Start" />
+
+                        <HorizontalStackLayout 
+                            Grid.Row="1"
+                            Grid.Column="1"
+                           >
+                            <Image 
+                                Margin="5,5,5,5"
+                                Source="euro.png" 
+                                HeightRequest="15"
+                                IsVisible="{Binding Euro}"
+                                />
+                            <Image 
+                                Margin="5,5,5,5"
+                                Source="oecd.png" 
+                                HeightRequest="30"
+                                WidthRequest="70"
+                                IsVisible="{Binding OecdMembers}"
+                                />
+                            <Image 
+                                Margin="5,5,5,5"
+                                Source="europeunion.png" 
+                                HeightRequest="30"
+                                IsVisible="{Binding EuropeUnion}"
+                                />
+                            <Image 
+                                Margin="5,5,5,5"
+                                Source="g7.png" 
+                                HeightRequest="25"
+                                IsVisible="{Binding G7}"
+                                />
+                            <Image 
+                                Margin="5,5,5,5"
+                                Source="g20.png" 
+                                HeightRequest="25"
+                                IsVisible="{Binding G20}"
+                                />
+                        </HorizontalStackLayout>
+
+                        <Image 
+                             Grid.Row="0"
+                             Grid.RowSpan="3"
+                             Grid.Column="6"
+                             Source="{Binding Projection}" 
+                             HeightRequest="100"
+                             WidthRequest="100"
+                             IsVisible="false"
+                             />
+                    </Grid>
+                </DataTemplate>
+            </syncfusion:SfListView.ItemTemplate>
+        </syncfusion:SfListView>
 
 
-            <Label Text="{Binding Nbr}"
-               Grid.Column="1"
-               Grid.Row="0"
-               FontSize="15"
-               FontAttributes="Bold"
-               HorizontalOptions="End" />
-        </Grid>
-
-            <ListView Margin="10,0,10,0" ItemsSource="{Binding Items}">
-                <ListView.ItemTemplate>
-                    <DataTemplate x:DataType="models:Country">
-                        <ViewCell >
-                            <StackLayout 
-                                Orientation="Horizontal" 
-                                Spacing="6">
-
-                                <ffimageloading:SvgCachedImage 
-                                    Source="{Binding Flag}" 
-                                    WidthRequest="50"
-                                    HeightRequest="50"
-                                    HorizontalOptions="Center"
-                                    VerticalOptions="Center"
-                                    />
-
-                                <StackLayout 
-                                    WidthRequest="270"
-                                    Orientation="Vertical"
-                                    VerticalOptions="Center">
-
-                                    <Label Text="{Binding Name}"
-                                        FontSize="15"
-                                        FontAttributes="Bold"
-                                        HorizontalOptions="Start" />
-                                
-                                    <StackLayout 
-                                        Orientation="Horizontal"
-                                        >
-
-                                        <Image 
-                                            Source="euro.png" 
-                                            WidthRequest="10"
-                                            HeightRequest="10"
-                                            Margin="5,5,5,5" 
-                                            IsVisible="{Binding Euro}"
-                                            />
-                                        <Image 
-                                            Source="oecd.png" 
-                                            HeightRequest="20"
-                                            WidthRequest="50"
-                                            Margin="5,5,5,5" 
-                                            IsVisible="{Binding OecdMembers}"
-                                            />
-                                        <Image 
-                                            Source="europeunion.png" 
-                                            HeightRequest="25"
-                                            WidthRequest="50"
-                                            IsVisible="{Binding EuropeUnion}"
-                                            />
-
-                                        <Image 
-                                            Source="g7.png" 
-                                            HeightRequest="25"
-                                            WidthRequest="50"
-                                            IsVisible="{Binding G7}"
-                                            />
-
-                                        <Image 
-                                            Source="g20.png" 
-                                            HeightRequest="25"
-                                            WidthRequest="50"
-                                            IsVisible="{Binding G20}"
-                                            />
-
-                                    </StackLayout>
-
-                                </StackLayout>
-
-                                <Image 
-                                    Source="{Binding Projection}" 
-                                    HeightRequest="40"
-                                    WidthRequest="40"
-                                    Margin="5,5,5,5" 
-                                    HorizontalOptions="End"
-                                    />
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-    </StackLayout>
+    </Grid>
 </ContentPage>    

@@ -10,7 +10,11 @@
         <Entry Placeholder="Enter task" Text="{Binding Text}" Grid.Row="1"/>
         <Button Text="Add" Grid.Row="1" Grid.Column="1" Command="{Binding AddCommand}"/>
 
-        <CollectionView Grid.Row="2" Grid.ColumnSpan="2" ItemsSource="{Binding Items}" SelectionMode="None">
+        <CollectionView 
+            Grid.Row="2" 
+            Grid.ColumnSpan="2" 
+            ItemsSource="{Binding Items}" 
+            SelectionMode="None">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="{x:Type x:String}">
                     <SwipeView>
