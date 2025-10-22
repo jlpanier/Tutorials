@@ -95,19 +95,24 @@
                             VerticalOptions="Center"
                             />
 
-                        <Label Text="{Binding Name}"
-                            Margin="10,0,10,0"
-                            Grid.ColumnSpan="4"
+                        <Label Text="{Binding FullName}"
                             Grid.Row="0"
                             Grid.Column="1"
+                            Margin="10,0,10,0"
                             FontSize="15"
                             FontAttributes="Bold"
                             HorizontalOptions="Start" />
 
+
+                        <Label Text="{Binding PopulationStr}"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            FontSize="15"
+                            HorizontalOptions="End" />
+
                         <HorizontalStackLayout 
                             Grid.Row="1"
-                            Grid.Column="1"
-                           >
+                            Grid.Column="1">
                             <Image 
                                 Margin="5,5,5,5"
                                 Source="euro.png" 
@@ -140,6 +145,12 @@
                                 IsVisible="{Binding G20}"
                                 />
                         </HorizontalStackLayout>
+
+                        <Label Text="{Binding AreaStr}"
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            FontSize="15"
+                            HorizontalOptions="End" />
 
                         <Image 
                              Grid.Row="0"

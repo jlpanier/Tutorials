@@ -1,5 +1,6 @@
 ﻿using Common;
 using CurieXplorePays;
+using RestCountries;
 
 namespace Maui.Tutorials.Models
 {
@@ -16,8 +17,9 @@ namespace Maui.Tutorials.Models
         /// <summary>
         /// Temporaire
         /// </summary>
-        public string FullName => $"{Name} ({Iso3})";
+        public string FullName => $"{Name} ({cap})";
 
+        public string cap => string.IsNullOrEmpty(Capital) ? Iso3 : Capital;
         /// <summary>
         /// Image carte de la projection
         /// </summary>
@@ -203,11 +205,42 @@ namespace Maui.Tutorials.Models
         /// </summary>
         public bool G20 { get; private set; } = false;
 
+        /// <summary>
+        /// Liste des capitales du pays
+        /// </summary>
+        public string Capital { get; set; }
+
+        /// <summary>
+        /// Area
+        /// </summary>
+        public double Area { get; set; }
+
+        public string AreaStr => Area > 10000 ? $"{(int)(Area / 1000)} km2" : $"{Area} km2";
+
+        /// <summary>
+        /// Population
+        /// </summary>
+        public int Population { get; set; }
+
+        public string PopulationStr => Population > 10000 ? $"{(int)(Population/1000)} k" : Population.ToString();
+
         public static async Task<List<Country>> Get()
         {
             var result = new List<Country>();
             var items = await CurieXplore.Get();
             items.ForEach(_=>result.Add(new Country(_)));
+            var data = await RestCountries.RestCountries.Get();
+            data.ForEach(d =>
+            {
+                var country = result.FirstOrDefault(_ => _.Iso3 == d.cca3);
+                if (country != null)
+                {
+                    country.Capital = d.capital.FirstOrDefault() ?? string.Empty;
+                    country.Area = d.area;
+                    country.Population = d.population;
+                }
+
+            });
             return result;
         }
 
