@@ -215,7 +215,7 @@ namespace Maui.Tutorials.Models
         /// </summary>
         public double Area { get; set; }
 
-        public string AreaStr => Area > 10000 ? $"{(int)(Area / 1000)} km2" : $"{Area} km2";
+        public string AreaStr => Area > 10000 ? $"{(int)(Area / 1000)} km\u00B2" : $"{Area} km²";
 
         /// <summary>
         /// Population

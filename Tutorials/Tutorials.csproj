@@ -98,6 +98,9 @@
 	  <Compile Update="Pages\First\FirstMauiPage.xaml.cs">
 	    <DependentUpon>FirstMauiPage.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Pages\Unicodes\UnicodePage.xaml.cs">
+	    <DependentUpon>UnicodePage.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -261,6 +264,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\Pokemon\PokemonPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Unicodes\UnicodePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
