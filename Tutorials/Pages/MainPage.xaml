@@ -36,6 +36,11 @@
                          Command="{Binding NavigateCommand}"
                          CommandParameter="{x:Type views:UnicodePage}" />
 
+                    <TextCell Text="Culture"
+                         Detail="Cultures Types"
+                         Command="{Binding NavigateCommand}"
+                         CommandParameter="{x:Type views:CultureInfoPage}" />
+
                 </TableSection>
             </TableRoot>
         </TableView>
