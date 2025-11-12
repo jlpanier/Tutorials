@@ -41,6 +41,11 @@
                          Command="{Binding NavigateCommand}"
                          CommandParameter="{x:Type views:CultureInfoPage}" />
 
+                    <TextCell Text="Nombre premiers"
+                         Detail="Liste des nombres premiers"
+                         Command="{Binding NavigateCommand}"
+                         CommandParameter="{x:Type views:PrimeNumberPage}" />
+
                 </TableSection>
             </TableRoot>
         </TableView>

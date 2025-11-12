@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewModels="clr-namespace:Maui.Tutorials.ViewModels"
+    xmlns:models="clr-namespace:Maui.Tutorials.Models"
+    x:Class="Maui.Tutorials.Pages.PrimeNumberPage"
+    x:DataType="viewModels:PrimeNumberViewModel"
+    >
+    <ContentPage.BindingContext>
+        <viewModels:PrimeNumberViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <DataTemplate x:Key="ItemTemplate" x:DataType="models:PrimeNumber">
+            <Grid  Margin="5" HeightRequest="32" WidthRequest="52">
+                <Label 
+                    Text="{Binding Number}" 
+                    HorizontalOptions="Center" 
+                    VerticalOptions="Center"
+                    IsVisible="{Binding IsPrimeNumber}"
+                    FontAttributes="Bold"
+                    TextColor="Blue" 
+                    />
+                <Label 
+                    Text="{Binding Number}" 
+                    HorizontalOptions="Center" 
+                    VerticalOptions="Center"
+                    IsVisible="{Binding IsNotPrimeNumber}"
+                    />
+            </Grid>
+        </DataTemplate>
+    </ContentPage.Resources>
+    <StackLayout Margin="10">
+        <Label Text="Nombre premiers" Margin="20" FontSize="20" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" />
+        <RefreshView 
+            IsRefreshing="{Binding IsRefreshing}"
+            RefreshColor="Teal"
+            Command="{Binding RefreshCommand}"
+            >
+            <ScrollView Scrolled="OnScrollViewScrolled" >
+                <FlexLayout 
+                    Direction="Row"
+                    Wrap="Wrap"
+                    AlignItems="Center"
+                    AlignContent="Center"
+                    BindableLayout.ItemsSource="{Binding Items}"
+                    BindableLayout.ItemTemplate="{StaticResource ItemTemplate}" />
+            </ScrollView>
+        </RefreshView>
+    </StackLayout>
+</ContentPage>
