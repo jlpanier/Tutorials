@@ -4,23 +4,27 @@ using SQLite;
 
 namespace Repository.Dbo
 {
-    public abstract class BaseDbo
+    public abstract class BaseDbo:IDisposable
     {
         protected static readonly object dbLock = new object();
 
-        private static string dbPath = null;
+        private readonly string _dbPath;
 
-        private static SQLiteConnection _db = null;
+        private SQLiteConnection? _db = null;
 
-        protected BaseDbo() { }
+        public BaseDbo(string dbpath)
+        {
+            _dbPath = dbpath;
+            Init();
+        }
 
-        public static SQLiteConnection Db
+        public SQLiteConnection Db
         {
             get
             {
                 if (_db == null)
                 {
-                    _db = new SQLiteConnection(dbPath, SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.Create | SQLiteOpenFlags.FullMutex, false);
+                    _db = new SQLiteConnection(_dbPath, SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.Create | SQLiteOpenFlags.FullMutex, false);
                 }
                 return _db;
             }
@@ -31,13 +35,35 @@ namespace Repository.Dbo
         /// </summary>
         /// <param name="databasePath"></param>
         /// <param name="busyTimeout"></param>
-        public static void Init(string databasePath, double busyTimeout = 30)
+        private void Init(double busyTimeout = 30)
         {
-            dbPath = databasePath;
             Db.BusyTimeout = TimeSpan.FromSeconds(busyTimeout);
+            Db.CreateTable(typeof(PrimeNumberEntity));
         }
 
-        public static void Close()
+        /// <summary>
+        /// Is this instance disposed?
+        /// </summary>
+        protected bool Disposed { get; private set; }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            Close();
+            GC.SuppressFinalize(this);
+        }
+
+        /// <summary>
+        /// Dispose worker method. See http://coding.abel.nu/2012/01/disposable
+        /// </summary>
+        /// <param name="disposing">Are we disposing? 
+        /// Otherwise we're finalizing.</param>
+        protected virtual void Dispose(bool disposing)
+        {
+            Disposed = true;
+        }
+
+        public void Close()
         {
             if (_db != null)
             {
@@ -46,7 +72,7 @@ namespace Repository.Dbo
             }
         }
 
-        public static void Save(BaseEntity entity)
+        public void Save(BaseEntity entity)
         {
             Db.InsertOrReplace(entity);
         }
@@ -84,7 +110,7 @@ namespace Repository.Dbo
             }
         }
 
-        public static int AddColumn(string tableName, string columnName, string type, string lenght)
+        public int AddColumn(string tableName, string columnName, string type, string lenght)
         {
             lock (dbLock)
             {
@@ -100,7 +126,7 @@ namespace Repository.Dbo
             }
         }
 
-        public static int AddColumn(string tableName, string columnName, string type)
+        public int AddColumn(string tableName, string columnName, string type)
         {
             lock (dbLock)
             {
@@ -116,7 +142,7 @@ namespace Repository.Dbo
             }
         }
 
-        public static T ExecuteScalar<T>(string query, params object[] args)
+        public T ExecuteScalar<T>(string query, params object[] args)
         {
             lock (Db)
             {
@@ -124,7 +150,7 @@ namespace Repository.Dbo
             }
         }
 
-        public static int Execute(string query, params object[] args)
+        public int Execute(string query, params object[] args)
         {
             lock (Db)
             {
@@ -132,7 +158,7 @@ namespace Repository.Dbo
             }
         }
 
-        public static int Insert(object obj)
+        public int Insert(object obj)
         {
             lock (Db)
             {
@@ -140,7 +166,7 @@ namespace Repository.Dbo
             }
         }
 
-        public static int Update(object obj)
+        public int Update(object obj)
         {
             lock (Db)
             {
@@ -148,7 +174,7 @@ namespace Repository.Dbo
             }
         }
 
-        public static int Delete(object objectToDelete)
+        public int Delete(object objectToDelete)
         {
             lock (Db)
             {
@@ -156,7 +182,7 @@ namespace Repository.Dbo
             }
         }
 
-        public static int Delete<T>(object primaryKey)
+        public int Delete<T>(object primaryKey)
         {
             lock (Db)
             {
@@ -164,7 +190,7 @@ namespace Repository.Dbo
             }
         }
 
-        public static int DeleteAll<T>()
+        public int DeleteAll<T>()
         {
             lock (Db)
             {
@@ -172,7 +198,7 @@ namespace Repository.Dbo
             }
         }
 
-        public static void CreateTable<T>() where T : class
+        public void CreateTable<T>() where T : class
         {
             lock (Db)
             {
@@ -180,7 +206,7 @@ namespace Repository.Dbo
             }
         }
 
-        public static void DropTable<T>() where T : class
+        public void DropTable<T>() where T : class
         {
             lock (Db)
             {

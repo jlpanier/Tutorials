@@ -22,5 +22,14 @@ namespace Maui.Tutorials.Pages
 
             BindingContext = this;
         }
+
+        /// <summary>
+        /// customize behavior immediately prior to the page becoming visible.
+        /// </summary>
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            Tutorials.Instance.Init();
+        }
     }
 }

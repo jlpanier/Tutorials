@@ -1,7 +1,12 @@
-﻿namespace Maui.Tutorials.Models
+﻿using Repository.Dbo;
+using Repository.Entities;
+using System.Collections.ObjectModel;
+
+namespace Maui.Tutorials.Models
 {
     public class PrimeNumbers
     {
+        private string _databasePath;
         public static PrimeNumbers Instance 
         { 
             get
@@ -15,35 +20,94 @@
         }
         private static PrimeNumbers? _primeNumbers;
 
-
-        public List<PrimeNumber> Get(int size)
+        public void Init(string databasepath)
         {
-            var item = Primes.Last();
-            int number = item.Number + 1;
-            int somme = item.Somme;
-            while (number <= size)
+            _databasePath = $"{databasepath}/PRIMENUMBER.sqlite";
+        }
+
+        public List<Number> Get()
+        {
+            Primes = new List<Number>();
+            using (var dbo = new PrimeNumberDbo(_databasePath))
             {
-                var isPrimeNumber = IsPrimeNumber(number);
-                if (isPrimeNumber) somme++;
-                Primes.Add(new PrimeNumber(number, isPrimeNumber, somme));
-                number++;
+                var items = dbo.Get();
+                if (items.Any())
+                {
+                    int index = 1;
+                    int somme = 0;
+                    foreach (var prime in items.OrderBy(_ => _.Number))
+                    {
+                        while (index < prime.Number)
+                        {
+                            Primes.Add(new Number(index, false, somme));
+                            index++;
+                        }
+                        Primes.Add(new Number(prime.Number, true, somme++));
+                        index++;
+                    }
+                }
+                else
+                {
+                    var defaultvalue = new PrimeNumbers();
+                    foreach (var prime in defaultvalue.Primes.Where(_ => _.IsPrimeNumber).OrderBy(_ => _.Value))
+                    {
+                        dbo.Save(new PrimeNumberEntity()
+                        {
+                            Number = prime.Value,
+                            DateMaj = DateTime.Now,
+                        });
+                        Primes.Add(prime);
+                    }
+                }
             }
             return Primes;
         }
 
-        private List<PrimeNumber> Primes;
+        public Number Next()
+        {
+            Number? result = null;
+            var lastvalue = Primes.Last();
+            int number = lastvalue.Value + 1;
+            int somme = lastvalue.Somme;
+            var found = false;
+            while (!found)
+            {
+                var isPrimeNumber = IsPrimeNumber(number);
+                if (isPrimeNumber)
+                {
+                    found = true;
+                    somme++;
+                    using (var dbo = new PrimeNumberDbo(_databasePath))
+                    {
+                        dbo.Save(new PrimeNumberEntity()
+                        {
+                            Number = number,
+                            DateMaj = DateTime.Now,
+                        });
+                    }
+                    result = new Number(number, true, somme);
+                }
+                var item = new Number(number, isPrimeNumber, somme);
+                Primes.Add(item);
+                number++;
+            }
+            return result ?? new Number(1,true,1);
+        }
+
+        public List<Number> Primes { get; private set; }
 
         private PrimeNumbers()
         {
-            Primes=new List<PrimeNumber>()
+            _databasePath = string.Empty;
+            Primes =new List<Number>()
             {
-                new PrimeNumber(1,true,1),
-                new PrimeNumber(2,true,2),
-                new PrimeNumber(3,true,3),
-                new PrimeNumber(4,false,3),
-                new PrimeNumber(5,true,4),
-                new PrimeNumber(6,false,4),
-                new PrimeNumber(7,true,5),
+                new Number(1,true,1),
+                new Number(2,true,2),
+                new Number(3,true,3),
+                new Number(4,false,3),
+                new Number(5,true,4),
+                new Number(6,false,4),
+                new Number(7,true,5),
             };
         }
 
@@ -54,10 +118,10 @@
             {
                 double racine = Math.Sqrt((double)number);
                 int index = 0;
-                var items = Primes.Where(_ => _.IsPrimeNumber && _.Number > 2 && _.Number <= racine).ToArray();
+                var items = Primes.Where(_ => _.IsPrimeNumber && _.Value > 2 && _.Value <= racine).ToArray();
                 while (index < items.Count() && isPrimeNumber)
                 {
-                    if (number % items[index].Number == 0)
+                    if (number % items[index].Value == 0)
                     {
                         isPrimeNumber = false;
                     }
