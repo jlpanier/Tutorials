@@ -1,6 +1,4 @@
-﻿using PokeApiNet;
-
-namespace Pokemon.Objets
+﻿namespace Pokemon.Objets
 {
     public class Pokemon
     {
@@ -11,9 +9,9 @@ namespace Pokemon.Objets
         
         public static async void Load()
         {
-            PokeApiClient pokeClient = new PokeApiClient();
-            PokeApiNet.Pokemon hoOh = await pokeClient.GetResourceAsync<PokeApiNet.Pokemon>("ho-oh");
-            Item clawFossil = await pokeClient.GetResourceAsync<Item>(100);
+            //PokeApiClient pokeClient = new PokeApiClient();
+            //PokeApiNet.Pokemon hoOh = await pokeClient.GetResourceAsync<PokeApiNet.Pokemon>("ho-oh");
+            //Item clawFossil = await pokeClient.GetResourceAsync<Item>(100);
         }
 
     }

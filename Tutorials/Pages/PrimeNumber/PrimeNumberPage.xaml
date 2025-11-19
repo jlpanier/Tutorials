@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:viewModels="clr-namespace:Maui.Tutorials.ViewModels"
     xmlns:models="clr-namespace:Maui.Tutorials.Models"
+    xmlns:convert="clr-namespace:Maui.Tutorials.Converter"
     x:Class="Maui.Tutorials.Pages.PrimeNumberPage"
     x:DataType="viewModels:PrimeNumberViewModel"
     >
@@ -11,27 +12,24 @@
         <viewModels:PrimeNumberViewModel />
     </ContentPage.BindingContext>
     <ContentPage.Resources>
-        <DataTemplate x:Key="ItemTemplate" x:DataType="models:PrimeNumber">
-            <Grid  Margin="5" HeightRequest="32" WidthRequest="52">
-                <Label 
-                    Text="{Binding Number}" 
-                    HorizontalOptions="Center" 
-                    VerticalOptions="Center"
-                    IsVisible="{Binding IsPrimeNumber}"
-                    FontAttributes="Bold"
-                    TextColor="Blue" 
-                    />
-                <Label 
-                    Text="{Binding Number}" 
-                    HorizontalOptions="Center" 
-                    VerticalOptions="Center"
-                    IsVisible="{Binding IsNotPrimeNumber}"
-                    />
-            </Grid>
+        <ResourceDictionary>
+            <convert:BoolToFontAttributesConverter x:Key="CustomConverter" />
+        </ResourceDictionary>
+        <DataTemplate x:Key="ItemTemplate" x:DataType="models:Number">
+            <Label 
+                Margin="5"
+                HeightRequest="32" WidthRequest="52"
+                Text="{Binding Value}" 
+                HorizontalOptions="Center" 
+                VerticalOptions="Center"
+                FontAttributes="{Binding IsPrimeNumber,Converter={StaticResource CustomConverter}}"
+                TextColor="{Binding TextColor}" 
+                />
         </DataTemplate>
     </ContentPage.Resources>
     <StackLayout Margin="10">
         <Label Text="Nombre premiers" Margin="20" FontSize="20" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" />
+
         <RefreshView 
             IsRefreshing="{Binding IsRefreshing}"
             RefreshColor="Teal"

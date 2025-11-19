@@ -1,19 +1,21 @@
 ﻿namespace Maui.Tutorials.Models
 {
-    public class PrimeNumber
+    public class Number
     {
         public bool IsPrimeNumber { get; private set; }
 
         public bool IsNotPrimeNumber => !IsPrimeNumber;
 
-        public int Number { get; private set; }
+        public int Value { get; private set; }
 
         public int Somme { get; private set; }
 
-        public PrimeNumber(int number, bool iSPrimeNumber, int somme)
+        public string TextColor => IsPrimeNumber ? "Red" : "Black";
+
+        public Number(int number, bool iSPrimeNumber, int somme)
         {
             IsPrimeNumber = iSPrimeNumber;
-            Number = number;
+            Value = number;
             Somme = somme;
         }
     }
