@@ -1,5 +1,5 @@
 ﻿using ExCSS;
-using Maui.Tutorials.Models;
+using Tutorials.Models;
 using Repository.Dbo;
 using Repository.Entities;
 using Syncfusion.Maui.DataSource.Extensions;
@@ -9,7 +9,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 
-namespace Maui.Tutorials.ViewModels
+namespace Tutorials.ViewModels
 {
     public class PrimeNumberViewModel : INotifyPropertyChanged
     {

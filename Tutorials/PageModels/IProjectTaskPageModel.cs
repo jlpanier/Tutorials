@@ -1,7 +1,7 @@
 using CommunityToolkit.Mvvm.Input;
-using Shares.Models;
+using Tutorials.Models;
 
-namespace Shares.PageModels
+namespace Tutorials.PageModels
 {
     public interface IProjectTaskPageModel
     {

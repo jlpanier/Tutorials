@@ -1,4 +1,4 @@
-﻿namespace Maui.Tutorials
+﻿namespace Tutorials
 {
     public partial class App : Application
     {

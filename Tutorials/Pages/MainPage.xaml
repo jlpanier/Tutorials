@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:viewmodel="clr-namespace:Maui.Tutorials.ViewModels"
-             xmlns:views="clr-namespace:Maui.Tutorials.Pages"
-             x:Class="Maui.Tutorials.Pages.MainPage">
+             xmlns:viewmodel="clr-namespace:Tutorials.ViewModels"
+             xmlns:views="clr-namespace:Tutorials.Pages"
+             x:Class="Tutorials.Pages.MainPage">
 
    
     <ContentView Padding="20">
@@ -16,6 +16,11 @@
                          Command="{Binding NavigateCommand}"
                          CommandParameter="{x:Type views:GalleryPage}" />
 
+                    <TextCell Text="Graphe"
+                         Detail="Utilisation des graphes DevExpress.Maui.Charts"
+                         Command="{Binding NavigateCommand}"
+                         CommandParameter="{x:Type views:DevExpressChartPage}" />
+                    
                     <TextCell Text="FirstMAUI"
                          Detail="Liste tata toto"
                          Command="{Binding NavigateCommand}"
@@ -40,6 +45,11 @@
                          Detail="Liste des nombres premiers"
                          Command="{Binding NavigateCommand}"
                          CommandParameter="{x:Type views:PrimeNumberPage}" />
+
+                    <TextCell Text="Couleurs"
+                         Detail="Définition des couleurs NETMAUI"
+                         Command="{Binding NavigateCommand}"
+                         CommandParameter="{x:Type views:ColorsPage}" />
 
                 </TableSection>
             </TableRoot>

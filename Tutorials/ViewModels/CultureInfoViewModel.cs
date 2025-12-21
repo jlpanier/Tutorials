@@ -1,10 +1,10 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using Maui.Tutorials.Models;
+using Tutorials.Models;
 using Syncfusion.Maui.DataSource.Extensions;
 using System.Collections.ObjectModel;
 using System.Globalization;
 
-namespace Maui.Tutorials.ViewModels
+namespace Tutorials.ViewModels
 {
     public partial class CultureInfoViewModel : ObservableObject
     {

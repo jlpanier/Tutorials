@@ -4,9 +4,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Maui;assembly=FFImageLoading.Maui"
              xmlns:syncfusion="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
-             xmlns:viewmodel="clr-namespace:Maui.Tutorials.ViewModels"
-             xmlns:models="clr-namespace:Maui.Tutorials.Models"
-             x:Class="Maui.Tutorials.Pages.CountryPage"
+             xmlns:viewmodel="clr-namespace:Tutorials.ViewModels"
+             xmlns:models="clr-namespace:Tutorials.Models"
+             x:Class="Tutorials.Pages.CountryPage"
               >
     <Grid  Padding="10" RowSpacing="10" ColumnSpacing="10">
         <Grid.ColumnDefinitions>

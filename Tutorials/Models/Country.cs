@@ -2,7 +2,7 @@
 using CurieXplorePays;
 using RestCountries;
 
-namespace Maui.Tutorials.Models
+namespace Tutorials.Models
 {
     /// <summary>
     /// Gestion des pays

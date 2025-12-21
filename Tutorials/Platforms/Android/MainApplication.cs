@@ -1,8 +1,8 @@
 ﻿using Android.App;
 using Android.Runtime;
-using Maui.Tutorials;
+using Tutorials;
 
-namespace Shares
+namespace Tutorials
 {
     [Application]
     public class MainApplication : MauiApplication

@@ -1,6 +1,6 @@
 using Syncfusion.Maui.Toolkit.Charts;
 
-namespace Shares.Pages.Controls
+namespace Tutorials.Pages.Controls
 {
     public class LegendExt : ChartLegend
     {

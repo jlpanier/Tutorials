@@ -1,7 +1,7 @@
 using CommunityToolkit.Mvvm.ComponentModel;
-using Maui.Tutorials.ViewModels;
+using Tutorials.ViewModels;
 
-namespace Maui.Tutorials.Pages;
+namespace Tutorials.Pages;
 
 public partial class DetailPage : ContentPage
 {

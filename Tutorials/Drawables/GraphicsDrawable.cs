@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Maui.Tutorials.Drawables
+namespace Tutorials.Drawables
 {
     public class GraphicsDrawable : IDrawable
     {

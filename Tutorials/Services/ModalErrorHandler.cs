@@ -1,4 +1,4 @@
-namespace Shares.Services
+namespace Tutorials.Services
 {
     /// <summary>
     /// Modal Error Handler.

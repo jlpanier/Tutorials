@@ -1,6 +1,6 @@
 ﻿using System.Windows.Input;
 
-namespace Maui.Tutorials.Pages
+namespace Tutorials.Pages
 {
     public partial class MainPage : ContentPage
     {

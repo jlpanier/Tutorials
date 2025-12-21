@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Maui.Tutorials.Models
+namespace Tutorials.Models
 {
     // Used in TabbedPageDemoPage, CarouselPageDemoPage & FlyoutPageDemoPage.
     public class NamedColor

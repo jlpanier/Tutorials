@@ -1,6 +1,6 @@
-using Maui.Tutorials.Models;
+using Tutorials.Models;
 
-namespace Maui.Tutorials.Pages;
+namespace Tutorials.Pages;
 
 public partial class IndicatorViewDemoPage : ContentPage
 {

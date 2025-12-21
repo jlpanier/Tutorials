@@ -1,6 +1,6 @@
-﻿using Maui.Tutorials.Models;
+﻿using Tutorials.Models;
 
-namespace Maui.Tutorials
+namespace Tutorials
 {
     public class Tutorials
     {

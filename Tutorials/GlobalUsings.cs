@@ -1,6 +1,6 @@
 global using Fonts;
-global using Shares.Data;
-global using Shares.PageModels;
-global using Shares.Pages;
-global using Shares.Services;
-global using Shares.Utilities;
+global using Tutorials.Data;
+global using Tutorials.PageModels;
+global using Tutorials.Pages;
+global using Tutorials.Services;
+global using Tutorials.Utilities;

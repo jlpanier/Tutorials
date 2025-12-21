@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:models="clr-namespace:Maui.Tutorials.Models"
-             xmlns:viewmodel="clr-namespace:Maui.Tutorials.ViewModels"
-             x:Class="Maui.Tutorials.Pages.CultureInfoPage"
+             xmlns:models="clr-namespace:Tutorials.Models"
+             xmlns:viewmodel="clr-namespace:Tutorials.ViewModels"
+             x:Class="Tutorials.Pages.CultureInfoPage"
              >
     <Grid  Padding="10" RowSpacing="10" ColumnSpacing="10">
         <Grid.ColumnDefinitions>

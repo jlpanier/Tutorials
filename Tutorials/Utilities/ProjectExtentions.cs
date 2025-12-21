@@ -1,7 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
-using Shares.Models;
+using Tutorials.Models;
 
-namespace Shares.Utilities
+namespace Tutorials.Utilities
 {
     /// <summary>
     /// Project Model Extentions

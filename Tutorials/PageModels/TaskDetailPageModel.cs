@@ -1,10 +1,10 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Shares.Data;
-using Shares.Models;
-using Shares.Services;
+using Tutorials.Data;
+using Tutorials.Models;
+using Tutorials.Services;
 
-namespace Shares.PageModels
+namespace Tutorials.PageModels
 {
     public partial class TaskDetailPageModel : ObservableObject, IQueryAttributable
     {
@@ -147,7 +147,7 @@ namespace Shares.PageModels
             await Shell.Current.GoToAsync("..?refresh=true");
 
             if (_task.ID > 0)
-                await Maui.Tutorials.AppShell.DisplayToastAsync("Task saved");
+                await AppShell.DisplayToastAsync("Task saved");
         }
 
         [RelayCommand(CanExecute = nameof(CanDelete))]
@@ -168,7 +168,7 @@ namespace Shares.PageModels
                 await _taskRepository.DeleteItemAsync(_task);
 
             await Shell.Current.GoToAsync("..?refresh=true");
-            await Maui.Tutorials.AppShell.DisplayToastAsync("Task deleted");
+            await AppShell.DisplayToastAsync("Task deleted");
         }
     }
 }

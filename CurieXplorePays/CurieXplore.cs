@@ -67,7 +67,7 @@ namespace CurieXplorePays
             {
                 return new CurieXploreHeader();
             }
-            catch (JsonException e)
+            catch (JsonException)
             {
                 return new CurieXploreHeader();
             }

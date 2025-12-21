@@ -1,8 +1,8 @@
 using System.Text.Json;
 using Microsoft.Extensions.Logging;
-using Shares.Models;
+using Tutorials.Models;
 
-namespace Shares.Data
+namespace Tutorials.Data
 {
     public class SeedDataService
     {

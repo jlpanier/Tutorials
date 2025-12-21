@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Tutorials.Pages.DevExpressChartPage"
+    xmlns:viewmodel="clr-namespace:Tutorials.ViewModels"
+    xmlns:views="clr-namespace:Tutorials.Pages"
+    Title="DevExpressChartPage">
+
+    <TableView Intent="Menu" >
+        <TableRoot>
+            <TableSection Title="Liste des graphique" >
+
+                <TextCell Text="AbsoluteLayout"
+                         Detail="AbsoluteLayout is used to position and size children using explicit values."
+                         Command="{Binding NavigateCommand}"
+                         CommandParameter="{x:Type views:AbsoluteLayoutDemoPage}" />
+            </TableSection>
+        </TableRoot>
+    </TableView>
+</ContentPage>

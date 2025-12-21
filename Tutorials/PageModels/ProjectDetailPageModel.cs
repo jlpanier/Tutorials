@@ -1,8 +1,8 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Shares.Models;
+using Tutorials.Models;
 
-namespace Shares.PageModels
+namespace Tutorials.PageModels
 {
     public partial class ProjectDetailPageModel : ObservableObject, IQueryAttributable, IProjectTaskPageModel
     {
@@ -195,7 +195,7 @@ namespace Shares.PageModels
             }
 
             await Shell.Current.GoToAsync("..");
-            await Maui.Tutorials.AppShell.DisplayToastAsync("Project saved");
+            await AppShell.DisplayToastAsync("Project saved");
         }
 
         [RelayCommand]
@@ -228,7 +228,7 @@ namespace Shares.PageModels
 
             await _projectRepository.DeleteItemAsync(_project);
             await Shell.Current.GoToAsync("..");
-            await Maui.Tutorials.AppShell.DisplayToastAsync("Project deleted");
+            await AppShell.DisplayToastAsync("Project deleted");
         }
 
         [RelayCommand]
@@ -267,7 +267,7 @@ namespace Shares.PageModels
 
             Tasks = new(Tasks);
             OnPropertyChanged(nameof(HasCompletedTasks));
-            await Maui.Tutorials.AppShell.DisplayToastAsync("All cleaned up!");
+            await AppShell.DisplayToastAsync("All cleaned up!");
         }
     }
 }

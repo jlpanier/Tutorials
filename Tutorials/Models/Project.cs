@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace Shares.Models
+namespace Tutorials.Models
 {
     public class Project
     {

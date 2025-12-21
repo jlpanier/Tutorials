@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Maui.Tutorials.Models
+namespace Tutorials.Models
 {
     public class RefreshItem
     {

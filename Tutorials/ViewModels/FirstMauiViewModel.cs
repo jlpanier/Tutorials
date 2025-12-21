@@ -1,10 +1,10 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Maui.Tutorials.Pages;
+using Tutorials.Pages;
 using System.Collections.ObjectModel;
 using static System.Net.Mime.MediaTypeNames;
 
-namespace Maui.Tutorials.ViewModels
+namespace Tutorials.ViewModels
 {
     public partial class FirstMauiViewModel : ObservableObject
     {

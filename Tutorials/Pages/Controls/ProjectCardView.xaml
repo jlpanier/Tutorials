@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Border xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-        xmlns:controls="clr-namespace:Shares.Pages.Controls"
-        xmlns:models="clr-namespace:Shares.Models"
+        xmlns:controls="clr-namespace:Tutorials.Pages.Controls"
+        xmlns:models="clr-namespace:Tutorials.Models"
         xmlns:fonts="clr-namespace:Fonts"
-        xmlns:pageModels="clr-namespace:Shares.PageModels"
+        xmlns:pageModels="clr-namespace:Tutorials.PageModels"
         xmlns:shimmer="clr-namespace:Syncfusion.Maui.Toolkit.Shimmer;assembly=Syncfusion.Maui.Toolkit"
-        x:Class="Shares.Pages.Controls.ProjectCardView"
+        x:Class="Tutorials.Pages.Controls.ProjectCardView"
         Style="{StaticResource CardStyle}"
         x:DataType="models:Project">
     <shimmer:SfShimmer

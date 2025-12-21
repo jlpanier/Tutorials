@@ -1,8 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using Maui.Tutorials.Models;
+using Tutorials.Models;
 using System.Collections.ObjectModel;
 
-namespace Maui.Tutorials.ViewModels
+namespace Tutorials.ViewModels
 {
     public partial class CountryViewModel : ObservableObject
     {

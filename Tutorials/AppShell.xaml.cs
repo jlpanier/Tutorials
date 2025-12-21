@@ -1,9 +1,9 @@
 ﻿using CommunityToolkit.Maui.Alerts;
 using CommunityToolkit.Maui.Core;
-using Maui.Tutorials.Pages;
+using Tutorials.Pages;
 using Font = Microsoft.Maui.Font;
 
-namespace Maui.Tutorials
+namespace Tutorials
 {
     public partial class AppShell : Shell
     {

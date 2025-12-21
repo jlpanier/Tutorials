@@ -1,4 +1,4 @@
-﻿namespace Maui.Tutorials.Models
+﻿namespace Tutorials.Models
 {
     public class Unicodes
     {
