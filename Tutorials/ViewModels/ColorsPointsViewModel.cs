@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace Tutorials.ViewModels
 {
-    public partial class ColorsViewModel : ObservableObject
+    public partial class ColorsPointsViewModel : ObservableObject
     {
         public ObservableCollection<ColorItem> ColorsList { get; } = new();
 
-        public ColorsViewModel()
+        public ColorsPointsViewModel()
         {
             var fields = typeof(Colors).GetFields(BindingFlags.Public | BindingFlags.Static);
 

@@ -7,6 +7,6 @@ public partial class ColorsPage : ContentPage
     public ColorsPage()
     {
         InitializeComponent();
-        BindingContext = new ColorsViewModel();
+        BindingContext = new ColorsPointsViewModel();
     }
 }
