@@ -1,6 +1,6 @@
 ﻿using Foundation;
 
-namespace Shares
+namespace Tutorials
 {
     [Register("AppDelegate")]
     public class AppDelegate : MauiUIApplicationDelegate

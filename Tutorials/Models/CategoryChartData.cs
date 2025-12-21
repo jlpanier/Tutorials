@@ -1,4 +1,4 @@
-namespace Shares.Models
+namespace Tutorials.Models
 {
     public class CategoryChartData
     {

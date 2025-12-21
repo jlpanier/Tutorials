@@ -2,7 +2,7 @@
 using System;
 using System.Globalization;
 
-namespace Maui.Tutorials.Converter
+namespace Tutorials.Converter
 {
     public class BoolToFontAttributesConverter : IValueConverter
     {

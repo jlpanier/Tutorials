@@ -1,8 +1,8 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Shares.Models;
+using Tutorials.Models;
 
-namespace Shares.PageModels
+namespace Tutorials.PageModels
 {
     public partial class MainPageModel : ObservableObject, IProjectTaskPageModel
     {
@@ -168,7 +168,7 @@ namespace Shares.PageModels
 
             OnPropertyChanged(nameof(HasCompletedTasks));
             Tasks = new(Tasks);
-            await Maui.Tutorials.AppShell.DisplayToastAsync("All cleaned up!");
+            await AppShell.DisplayToastAsync("All cleaned up!");
         }
     }
 }

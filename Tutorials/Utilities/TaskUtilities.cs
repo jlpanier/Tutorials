@@ -1,6 +1,6 @@
-using Shares.Services;
+using Tutorials.Services;
 
-namespace Shares.Utilities
+namespace Tutorials.Utilities
 {
     /// <summary>
     /// Task Utilities.

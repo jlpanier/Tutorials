@@ -1,11 +1,11 @@
 #nullable disable
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Shares.Data;
-using Shares.Models;
-using Shares.Services;
+using Tutorials.Data;
+using Tutorials.Models;
+using Tutorials.Services;
 
-namespace Shares.PageModels
+namespace Tutorials.PageModels
 {
     public partial class ProjectListPageModel : ObservableObject
     {

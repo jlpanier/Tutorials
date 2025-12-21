@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
 
-namespace Maui.Tutorials.ViewModels
+namespace Tutorials.ViewModels
 {
     public partial class MainViewModel: ObservableObject
     {

@@ -1,13 +1,14 @@
 ﻿using CommunityToolkit.Maui;
 using FFImageLoading.Maui;
-using Maui.Tutorials.Pages;
-using Maui.Tutorials.ViewModels;
-using Maui.Tutorials.ViewModels;
+using Tutorials.Pages;
+using Tutorials.ViewModels;
+using Tutorials.ViewModels;
 using Microsoft.Extensions.Logging;
 using Syncfusion.Maui.Toolkit.Hosting;
 using Syncfusion.Maui.Core.Hosting;
+using DevExpress.Maui;
 
-namespace Maui.Tutorials
+namespace Tutorials
 {
     public static class MauiProgram
     {
@@ -15,6 +16,9 @@ namespace Maui.Tutorials
         {
             var builder = MauiApp.CreateBuilder();
             builder
+                .UseDevExpress()
+                .UseDevExpressControls()
+                .UseDevExpressCharts()
                 .UseMauiApp<App>()
                 .UseMauiCommunityToolkit()
                 .ConfigureSyncfusionToolkit()
@@ -57,7 +61,7 @@ namespace Maui.Tutorials
             builder.Services.AddSingleton<MainPage>();
             builder.Services.AddSingleton<MainViewModel>();
 
-            builder.Services.AddTransient<Maui.Tutorials.Pages.DetailPage>();
+            builder.Services.AddTransient<DetailPage>();
             builder.Services.AddTransient<DetailViewModel>();
 
  

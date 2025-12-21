@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Tutorials.Pages.ColorsPage"
+             Title="ColorPage">
+    <CollectionView ItemsSource="{Binding ColorsList}">
+        <CollectionView.ItemsLayout>
+            <GridItemsLayout Orientation="Vertical" Span="3" />
+        </CollectionView.ItemsLayout>
+
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Frame Padding="5" Margin="5" HasShadow="False" BorderColor="LightGray">
+                    <VerticalStackLayout HorizontalOptions="Center">
+                        <BoxView Color="{Binding Value}" WidthRequest="50" HeightRequest="50" CornerRadius="5" />
+                        <Label Text="{Binding Name}" FontSize="12" HorizontalTextAlignment="Center" />
+                        <Label Text="{Binding Hex}" FontSize="10" TextColor="Gray" HorizontalTextAlignment="Center" />
+                    </VerticalStackLayout>
+                </Frame>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+
+</ContentPage>

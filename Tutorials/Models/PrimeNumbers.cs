@@ -2,7 +2,7 @@
 using Repository.Entities;
 using System.Collections.ObjectModel;
 
-namespace Maui.Tutorials.Models
+namespace Tutorials.Models
 {
     public class PrimeNumbers
     {

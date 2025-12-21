@@ -1,7 +1,7 @@
 using System.Text.Json.Serialization;
 using CommunityToolkit.Maui.Core.Extensions;
 
-namespace Shares.Models
+namespace Tutorials.Models
 {
     public class Tag
     {

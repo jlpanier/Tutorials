@@ -1,7 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
-namespace Maui.Tutorials.ViewModels
+namespace Tutorials.ViewModels
 {
     [QueryProperty("Text","Text")]
 

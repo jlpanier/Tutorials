@@ -1,8 +1,8 @@
 using Microsoft.Data.Sqlite;
 using Microsoft.Extensions.Logging;
-using Shares.Models;
+using Tutorials.Models;
 
-namespace Shares.Data
+namespace Tutorials.Data
 {
     /// <summary>
     /// Repository class for managing tags in the database.

@@ -1,6 +1,6 @@
 using System.Reflection;
 
-namespace Maui.Tutorials.Pages;
+namespace Tutorials.Pages;
 
 public partial class NavigationPageDemoPage : ContentPage
 {

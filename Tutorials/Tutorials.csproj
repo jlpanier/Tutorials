@@ -14,7 +14,7 @@
 		<!-- For example: <RuntimeIdentifiers>maccatalyst-x64;maccatalyst-arm64</RuntimeIdentifiers> -->
 
 		<OutputType>Exe</OutputType>
-		<RootNamespace>Maui.Tutorials</RootNamespace>
+		<RootNamespace>Tutorials</RootNamespace>
 		<UseMaui>true</UseMaui>
 		<SingleProject>true</SingleProject>
 		<ImplicitUsings>enable</ImplicitUsings>
@@ -24,10 +24,10 @@
 		<MauiEnableXamlCBindingWithSourceCompilation>true</MauiEnableXamlCBindingWithSourceCompilation>
 
 		<!-- Display name -->
-		<ApplicationTitle>Shares</ApplicationTitle>
+		<ApplicationTitle>Tutorials</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.jelosperone.shares</ApplicationId>
+		<ApplicationId>com.jelosperone.tutorials</ApplicationId>
 
 		<!-- Versions -->
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
@@ -70,6 +70,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="DevExpress.Maui.Charts" Version="25.1.7" />
+		<PackageReference Include="DevExpress.Maui.Controls" Version="25.1.7" />
 		<PackageReference Include="FFImageLoading.Maui" Version="1.3.2" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.100" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.8" />
@@ -96,6 +98,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Pages\Colors\ColorsPage .xaml.cs">
+	    <DependentUpon>ColorsPage .xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Pages\First\FirstMauiPage.xaml.cs">
 	    <DependentUpon>FirstMauiPage.xaml</DependentUpon>
 	  </Compile>
@@ -108,10 +113,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Pages\Colors\ColorsPage .xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\Country\CountryPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\CultureInfo\CultureInfoPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\DevExpress\DevExpressChartPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\Gallery\AbsoluteLayoutDemoPage.xaml">

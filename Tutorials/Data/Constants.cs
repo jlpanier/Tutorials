@@ -1,4 +1,4 @@
-namespace Shares.Data
+namespace Tutorials.Data
 {
     public static class Constants
     {

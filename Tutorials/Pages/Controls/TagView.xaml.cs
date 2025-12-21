@@ -1,4 +1,4 @@
-namespace Shares.Pages.Controls
+namespace Tutorials.Pages.Controls
 {
     public partial class TagView
     {

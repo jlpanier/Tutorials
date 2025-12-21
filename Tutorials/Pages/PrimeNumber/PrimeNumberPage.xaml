@@ -2,10 +2,10 @@
 <ContentPage 
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:viewModels="clr-namespace:Maui.Tutorials.ViewModels"
-    xmlns:models="clr-namespace:Maui.Tutorials.Models"
-    xmlns:convert="clr-namespace:Maui.Tutorials.Converter"
-    x:Class="Maui.Tutorials.Pages.PrimeNumberPage"
+    xmlns:viewModels="clr-namespace:Tutorials.ViewModels"
+    xmlns:models="clr-namespace:Tutorials.Models"
+    xmlns:convert="clr-namespace:Tutorials.Converter"
+    x:Class="Tutorials.Pages.PrimeNumberPage"
     x:DataType="viewModels:PrimeNumberViewModel"
     >
     <ContentPage.BindingContext>

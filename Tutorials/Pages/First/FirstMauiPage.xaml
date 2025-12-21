@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:viewmodel="clr-namespace:Maui.Tutorials.ViewModels"
-             x:Class="Maui.Tutorials.Pages.FirstMauiPage"
+             xmlns:viewmodel="clr-namespace:Tutorials.ViewModels"
+             x:Class="Tutorials.Pages.FirstMauiPage"
              Title="First MAUI Program">
 
     <Grid RowDefinitions="100,Auto, *" ColumnDefinitions=".75*, .25*" Padding="10" RowSpacing="10" ColumnSpacing="10">

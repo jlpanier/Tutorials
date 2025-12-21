@@ -1,6 +1,6 @@
 using System.Reflection;
 
-namespace Maui.Tutorials.Pages;
+namespace Tutorials.Pages;
 
 public partial class PickerDemoPage : ContentPage
 {
@@ -15,12 +15,12 @@ public partial class PickerDemoPage : ContentPage
 
         if (picker.SelectedIndex == -1)
         {
-            boxView.Color = Colors.Black;
+            boxView.Color = Microsoft.Maui.Graphics.Colors.Black;
         }
         else
         {
             string colorName = picker.Items[picker.SelectedIndex];
-            FieldInfo colorField = typeof(Colors).GetRuntimeField(colorName);
+            FieldInfo colorField = typeof(Microsoft.Maui.Graphics.Colors).GetRuntimeField(colorName);
             boxView.Color = (Color)(colorField.GetValue(null));
         }
     }

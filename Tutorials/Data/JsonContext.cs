@@ -1,5 +1,5 @@
 using System.Text.Json.Serialization;
-using Shares.Models;
+using Tutorials.Models;
 
 [JsonSerializable(typeof(Project))]
 [JsonSerializable(typeof(ProjectTask))]

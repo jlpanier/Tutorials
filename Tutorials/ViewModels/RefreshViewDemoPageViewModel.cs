@@ -1,4 +1,4 @@
-﻿using Maui.Tutorials.Models;
+﻿using Tutorials.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace Maui.Tutorials.ViewModels
+namespace Tutorials.ViewModels
 {
     public class RefreshViewDemoPageViewModel : INotifyPropertyChanged
     {

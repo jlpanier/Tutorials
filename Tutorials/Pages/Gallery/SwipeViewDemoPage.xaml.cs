@@ -1,8 +1,8 @@
-using Maui.Tutorials.Models;
+using Tutorials.Models;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 
-namespace Maui.Tutorials.Pages;
+namespace Tutorials.Pages;
 
 public partial class SwipeViewDemoPage : ContentPage
 {

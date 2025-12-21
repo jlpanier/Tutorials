@@ -1,7 +1,7 @@
 using System.Windows.Input;
-using Shares.Models;
+using Tutorials.Models;
 
-namespace Shares.Pages.Controls
+namespace Tutorials.Pages.Controls
 {
     public partial class TaskView
     {

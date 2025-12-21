@@ -3,10 +3,10 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:effectsView="clr-namespace:Syncfusion.Maui.Toolkit.EffectsView;assembly=Syncfusion.Maui.Toolkit"
-    xmlns:pageModels="clr-namespace:Shares.PageModels"
-    xmlns:models="clr-namespace:Shares.Models"
+    xmlns:pageModels="clr-namespace:Tutorials.PageModels"
+    xmlns:models="clr-namespace:Tutorials.Models"
     xmlns:shimmer="clr-namespace:Syncfusion.Maui.Toolkit.Shimmer;assembly=Syncfusion.Maui.Toolkit"
-    x:Class="Shares.Pages.Controls.TaskView"
+    x:Class="Tutorials.Pages.Controls.TaskView"
     StrokeShape="RoundRectangle 20"
     Background="{AppThemeBinding Light={StaticResource LightSecondaryBackground}, Dark={StaticResource DarkSecondaryBackground}}"
     x:DataType="models:ProjectTask">
