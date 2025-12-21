@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dx="http://schemas.devexpress.com/maui"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="Tutorials.Pages.BarSummaryOnSelection"
+             xmlns:local="clr-namespace:Tutorials"
+             Title="BarSummaryOnSelection">
+    <ContentPage.Behaviors>
+        <toolkit:StatusBarBehavior x:Name="statusBarBehavior" StatusBarColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource surfaceDark}}" StatusBarStyle="{AppThemeBinding Light=DarkContent, Dark=LightContent}"/>
+    </ContentPage.Behaviors>
+    <Grid RowDefinitions="Auto,Auto,*,Auto" Padding="0">
+        <Label Text="{Binding PeriodText}" HorizontalOptions="Center" Style="{StaticResource paleLabelStyle}" Margin="0,20,0,0"/>
+        <Label Text="{Binding TotalReplies, StringFormat='Total: {0}'}" FontSize="16" FontAttributes="Bold" HorizontalOptions="Center"  Margin="0,15,0,15" Grid.Row="1"/>
+        <dx:ChartView SelectionChanged="ChartView_SelectionChanged" Rotated="True" Grid.Row="2" Margin="0,0,0,10">
+            <dx:ChartView.AxisX>
+                <dx:QualitativeAxisX>
+                    <dx:QualitativeAxisX.Label>
+                        <dx:AxisLabel>
+                            <dx:AxisLabel.Style>
+                                <dx:AxisLabelStyle>
+                                    <dx:AxisLabelStyle.TextStyle>
+                                        <dx:TextStyle Color="{AppThemeBinding Light={StaticResource Gray600}, Dark={StaticResource Gray200}}" Size="13"/>
+                                    </dx:AxisLabelStyle.TextStyle>
+                                </dx:AxisLabelStyle>
+                            </dx:AxisLabel.Style>
+                        </dx:AxisLabel>
+                    </dx:QualitativeAxisX.Label>
+                </dx:QualitativeAxisX>
+            </dx:ChartView.AxisX>
+            <dx:ChartView.AxisY>
+                <dx:NumericAxisY>
+                    <dx:NumericAxisY.Label>
+                        <dx:AxisLabel>
+                            <dx:AxisLabel.Style>
+                                <dx:AxisLabelStyle>
+                                    <dx:AxisLabelStyle.TextStyle>
+                                        <dx:TextStyle Color="{AppThemeBinding Light={StaticResource Gray600}, Dark={StaticResource Gray200}}" Size="13"/>
+                                    </dx:AxisLabelStyle.TextStyle>
+                                </dx:AxisLabelStyle>
+                            </dx:AxisLabel.Style>
+                        </dx:AxisLabel>
+                    </dx:NumericAxisY.Label>
+                </dx:NumericAxisY>
+            </dx:ChartView.AxisY>
+            <dx:ChartView.ChartStyle>
+                <dx:ChartStyle BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource surfaceDark}}" />
+            </dx:ChartView.ChartStyle>
+            <dx:ChartView.Series>
+                <dx:BarSeries>
+                    <dx:BarSeries.Data>
+                        <dx:SeriesDataAdapter DataSource="{Binding Path=ComponentReplyInfos}" ArgumentDataMember="ComponentName">
+                            <dx:SeriesDataAdapter.ValueDataMembers>
+                                <dx:ValueDataMember Type="Value" Member="Count"/>
+                            </dx:SeriesDataAdapter.ValueDataMembers>
+                        </dx:SeriesDataAdapter>
+                    </dx:BarSeries.Data>
+                    <dx:BarSeries.PointColorizer>
+                        <dx:ColorEachPointColorizer x:Name="col">
+                            <dx:ColorEachPointColorizer.Palette>
+                                <x:Array Type="{x:Type Color}">
+                                    <Color>#FF8873bf</Color>
+                                    <Color>#CF8873bf</Color>
+                                    <Color>#AF8873bf</Color>
+                                    <Color>#9F8873bf</Color>
+                                    <Color>#7F8873bf</Color>
+                                    <Color>#6F8873bf</Color>
+                                </x:Array>
+                            </dx:ColorEachPointColorizer.Palette>
+                        </dx:ColorEachPointColorizer>
+                    </dx:BarSeries.PointColorizer>
+                </dx:BarSeries>
+            </dx:ChartView.Series>
+        </dx:ChartView>
+        <Border Grid.Row="3" Background="{StaticResource panelBrush}" StrokeThickness="0">
+            <dx:DXStackLayout Orientation="Vertical" Margin="30,10">
+                <Label Text="{Binding Path=SelectedComponentString}" HorizontalOptions="Center" FontAttributes="Bold" Margin="0,5,0,0" FontSize="16"/>
+                <Grid ColumnDefinitions="*,*" Margin="0,10,0,0">
+                    <Label Text="{Binding SelectionCompletedThreads, StringFormat='{0} Completed'}" HorizontalOptions="Start" Style="{StaticResource primaryLabelStyle}"/>
+                    <Label Text="{Binding SelectionThreadsCount, StringFormat='Total: {0}'}" HorizontalOptions="End" Grid.Column="1" Style="{StaticResource paleLabelStyle}"/>
+                </Grid>
+                <ProgressBar HorizontalOptions="Fill" ProgressColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryDark}}" Progress="{Binding SelectionCompletedThreadsProgress}"/>
+                <Grid ColumnDefinitions="*,*,*" Margin="0,0,0,0" Padding="20,10,20,10" HorizontalOptions="Fill">
+                    <local:InfoIconElement Image="bug" Value="{Binding SelectionBugs}" Description="Bugs&#x0a;Reported" HorizontalOptions="Center"/>
+                    <local:InfoIconElement Image="iteration" Value="{Binding SelectionAvgIterations}" Description="Ticket&#x0a;Iterations" Grid.Column="1" HorizontalOptions="Center"/>
+                    <local:InfoIconElement Image="time" Value="{Binding SelectionAvgReplyTime}" Description="Reply &#x0a;Time" Grid.Column="2" HorizontalOptions="Center"/>
+                </Grid>
+            </dx:DXStackLayout>
+        </Border>
+    </Grid>
+</ContentPage>
