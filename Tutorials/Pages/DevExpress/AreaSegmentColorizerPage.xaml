@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dx="http://schemas.devexpress.com/maui"
+             x:Class="Tutorials.Pages.AreaSegmentColorizerPage"
+             xmlns:local="clr-namespace:Tutorials.ViewModels"
+             Title="AreaSegmentColorizerPage">
+    <ContentPage.BindingContext>
+        <local:AreaSegmentColorizerViewModel/>
+    </ContentPage.BindingContext>
+    <dx:ChartView>
+        <dx:ChartView.Series>
+            <dx:AreaSeries>
+                <!-- Bind the series to the data source. -->
+                <dx:AreaSeries.Data>
+                    <dx:SeriesDataAdapter DataSource="{Binding LightSpectorData}" 
+                                          ArgumentDataMember="Argument">
+                        <dx:ValueDataMember Type="Value" Member="Value"/>
+                    </dx:SeriesDataAdapter>
+                </dx:AreaSeries.Data>
+
+                <dx:AreaSeries.FillColorizer>
+                    <dx:SegmentBasedFillColorizer>
+                        <dx:SegmentBasedFillColorizer.SegmentColorizer>
+                            <dx:GradientPointBasedSegmentColorizer 
+                               PointColorizer="{local:LightSpectorColorizer}"/>
+                        </dx:SegmentBasedFillColorizer.SegmentColorizer>
+                    </dx:SegmentBasedFillColorizer>
+                </dx:AreaSeries.FillColorizer>
+
+            </dx:AreaSeries>
+        </dx:ChartView.Series>
+
+        <dx:ChartView.AxisX>
+            <dx:NumericAxisX>
+                <dx:NumericAxisX.Title>
+                    <dx:AxisTitle Text="Wavelength, nm" />
+                </dx:NumericAxisX.Title>
+                <dx:NumericAxisX.Style>
+                    <dx:AxisStyle MajorTickmarksVisible="True" MinorTickmarksVisible="True"/>
+                </dx:NumericAxisX.Style>
+            </dx:NumericAxisX>
+        </dx:ChartView.AxisX>
+        <dx:ChartView.AxisY>
+            <dx:NumericAxisY>
+                <dx:NumericAxisY.Title>
+                    <dx:AxisTitle Text="Intensivity, %" />
+                </dx:NumericAxisY.Title>
+                <dx:NumericAxisY.Style>
+                    <dx:AxisStyle InterlacedVisible="True" InterlacedColor="#22DDDDDD" />
+                </dx:NumericAxisY.Style>
+            </dx:NumericAxisY>
+        </dx:ChartView.AxisY>
+        <dx:ChartView.Legend>
+            <dx:Legend />
+        </dx:ChartView.Legend>
+    </dx:ChartView>
+
+</ContentPage>

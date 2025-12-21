@@ -11,10 +11,17 @@
         <TableRoot>
             <TableSection Title="Liste des graphique" >
 
-                <TextCell Text="AbsoluteLayout"
-                         Detail="AbsoluteLayout is used to position and size children using explicit values."
+                <TextCell Text="AreaSegmentColorizerPage"
+                         Detail="AreaSegmentColorizerPage"
                          Command="{Binding NavigateCommand}"
-                         CommandParameter="{x:Type views:AbsoluteLayoutDemoPage}" />
+                         CommandParameter="{x:Type views:AreaSegmentColorizerPage}" />
+            </TableSection>
+            <TableSection Title="Liste des graphique" >
+
+                <TextCell Text="BarSummaryOnSelection"
+                        Detail="BarSummaryOnSelection"
+                        Command="{Binding NavigateCommand}"
+                        CommandParameter="{x:Type views:BarSummaryOnSelection}" />
             </TableSection>
         </TableRoot>
     </TableView>
