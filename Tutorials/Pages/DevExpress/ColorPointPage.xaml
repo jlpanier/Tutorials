@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dx="http://schemas.devexpress.com/maui"
+             xmlns:local="clr-namespace:Tutorials.ViewModels"
+             Title="ColorPoint"
+            x:Class="Tutorials.Pages.ColorPointPage">
+    <ContentPage.BindingContext>
+        <local:ColorsPointsViewModel/>
+    </ContentPage.BindingContext>
+    <dx:ChartView>
+        <dx:ChartView.Series>
+            <dx:PointSeries>
+                <dx:PointSeries.Data>
+                    <dx:SeriesDataAdapter DataSource="{Binding Data}" ArgumentDataMember="Time">
+                        <dx:ValueDataMember Type="Value" Member="Power"/>
+                    </dx:SeriesDataAdapter>
+                </dx:PointSeries.Data>
+                <dx:PointSeries.PointColorizer>
+                    <dx:ColorEachPointColorizer x:Name="myColor">
+                        <dx:ColorEachPointColorizer.Palette>
+                            <x:Array Type="{x:Type Color}">
+                                <Color>#006EC6</Color>
+                                <Color>#18ce9a</Color>
+                                <Color>#009ad6</Color>
+                                <Color>#79cb5d</Color>
+                                <Color>#0ed2dc</Color>
+                                <Color>#71a9dd</Color>
+                                <Color>#447238</Color>
+                                <Color>#12898e</Color>
+                            </x:Array>
+                        </dx:ColorEachPointColorizer.Palette>
+                    </dx:ColorEachPointColorizer>
+                </dx:PointSeries.PointColorizer>
+                <dx:PointSeries.Style>
+                    <dx:PointSeriesStyle MarkerSize="16"/>
+                </dx:PointSeries.Style>
+            </dx:PointSeries>
+        </dx:ChartView.Series>
+        <dx:ChartView.AxisX>
+            <dx:DateTimeAxisX GridAlignment="Day" GridSpacing="5">
+                <dx:DateTimeAxisX.LabelFormatAutoReplaceOptions>
+                    <dx:AxisLabelFormatAutoReplaceOptions Enabled="True">
+                        <dx:DateTimeLabelFormat MeasureUnit="Day" Format="d"/>
+                        <dx:DateTimeLabelFormat MeasureUnit="Month" Format="MMM, d"/>
+                    </dx:AxisLabelFormatAutoReplaceOptions>
+                </dx:DateTimeAxisX.LabelFormatAutoReplaceOptions>
+            </dx:DateTimeAxisX>
+        </dx:ChartView.AxisX>
+        <dx:ChartView.AxisY>
+            <dx:NumericAxisY AlwaysShowZeroLevel="False" GridAlignment="100">
+            </dx:NumericAxisY>
+        </dx:ChartView.AxisY>
+    </dx:ChartView>
+
+</ContentPage>
+

@@ -1,0 +1,64 @@
+﻿using DevExpress.Maui.Charts;
+
+namespace Tutorials.ViewModels
+{
+    public class CustomPointColorizerViewModel
+    {
+        public List<DataItemCustomPointColorizer> Data { get; }
+
+        public CustomPointColorizerViewModel()
+        {
+            Data = new List<DataItemCustomPointColorizer>() {
+                new DataItemCustomPointColorizer() { Argument = new DateTime(2020, 1, 1), Value = 3 },
+                new DataItemCustomPointColorizer() { Argument = new DateTime(2020, 2, 1), Value = 5 },
+                new DataItemCustomPointColorizer() { Argument = new DateTime(2020, 3, 1), Value = 7 },
+                new DataItemCustomPointColorizer() { Argument = new DateTime(2020, 4, 1), Value = 2 },
+                new DataItemCustomPointColorizer() { Argument = new DateTime(2020, 5, 1), Value = 6 },
+                new DataItemCustomPointColorizer() { Argument = new DateTime(2020, 6, 1), Value = 4 },
+                new DataItemCustomPointColorizer() { Argument = new DateTime(2020, 7, 1), Value = 1 },
+                new DataItemCustomPointColorizer() { Argument = new DateTime(2020, 8, 1), Value = 8 },
+                new DataItemCustomPointColorizer() { Argument = new DateTime(2020, 9, 1), Value = 3 },
+                new DataItemCustomPointColorizer() { Argument = new DateTime(2020, 10, 1), Value = 9 },
+                new DataItemCustomPointColorizer() { Argument = new DateTime(2020, 11, 1), Value = 4 },
+                new DataItemCustomPointColorizer() { Argument = new DateTime(2020, 12, 1), Value = 7 },
+            };
+        }
+    }
+
+    public class DataItemCustomPointColorizer
+    {
+        public DateTime Argument { get; set; }
+        public double Value { get; set; }
+    }
+
+    public class CustomColorizer : ICustomPointColorizer
+    {
+        Color ICustomPointColorizer.GetColor(ColoredPointInfo info)
+        {
+            switch (info.DateTimeArgument.Month)
+            {
+                case 12:
+                case 1:
+                case 2:
+                default:
+                    return Color.FromArgb("#5982db");
+                case 3:
+                case 4:
+                case 5:
+                    return Color.FromArgb("#755dd9");
+                case 6:
+                case 7:
+                case 8:
+                    return Color.FromArgb("#9b57d3");
+                case 9:
+                case 10:
+                case 11:
+                    return Color.FromArgb("#92278f");
+            }
+        }
+        public ILegendItemProvider GetLegendItemProvider()
+        {
+            return null;
+        }
+    }
+}

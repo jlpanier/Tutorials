@@ -9,20 +9,36 @@
 
     <TableView Intent="Menu" >
         <TableRoot>
-            <TableSection Title="Liste des graphique" >
-
-                <TextCell Text="AreaSegmentColorizerPage"
-                         Detail="AreaSegmentColorizerPage"
+            <TableSection Title="Fill Area Series by Segments">
+                <TextCell Text="Area chart visualizes the visible light spectrum."
+                         Detail="https://docs.devexpress.com/MAUI/DevExpress.Maui.Charts.AreaSeries"
                          Command="{Binding NavigateCommand}"
                          CommandParameter="{x:Type views:AreaSegmentColorizerPage}" />
             </TableSection>
-            <TableSection Title="Liste des graphique" >
-
-                <TextCell Text="BarSummaryOnSelection"
-                        Detail="BarSummaryOnSelection"
+            <TableSection Title="Interactive Chart: Bar Selection" >
+                <TextCell 
+                        Text="Users can select bars and see information associated with them."
+                        Detail="https://docs.devexpress.com/MAUI/404470"
                         Command="{Binding NavigateCommand}"
                         CommandParameter="{x:Type views:BarSummaryOnSelection}" />
             </TableSection>
+
+            <TableSection Title="Paint Points with Palette Colors">
+                <TextCell 
+                        Text="This example demonstrates how to paint series points with colors from the specified palette."
+                        Detail="https://docs.devexpress.com/MAUI/DevExpress.Maui.Charts.ColorEachPointColorizer"    
+                        Command="{Binding NavigateCommand}"
+                        CommandParameter="{x:Type views:ColorPointPage}" />
+            </TableSection>
+
+            <TableSection Title="Paint Points with Palette Colors">
+                <TextCell 
+                        Text="Bar chart displays monthly values colored based on the season."
+                        Detail="https://docs.devexpress.com/MAUI/403339/charts/series-point-colorizers"    
+                        Command="{Binding NavigateCommand}"
+                        CommandParameter="{x:Type views:CustomPointPage}" />
+            </TableSection>
+
         </TableRoot>
     </TableView>
 </ContentPage>

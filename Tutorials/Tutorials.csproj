@@ -109,6 +109,9 @@
 	  <Compile Update="Pages\Colors\ColorsPage .xaml.cs">
 	    <DependentUpon>ColorsPage .xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Pages\DevExpress\ColorPointPage.xaml.cs">
+	    <DependentUpon>ColorPointPage.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Pages\First\FirstMauiPage.xaml.cs">
 	    <DependentUpon>FirstMauiPage.xaml</DependentUpon>
 	  </Compile>
@@ -137,6 +140,12 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\DevExpress\BarSummaryOnSelection.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\DevExpress\ColorPointPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\DevExpress\CustomPointPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\DevExpress\DevExpressChartPage.xaml">
