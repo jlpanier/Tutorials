@@ -39,6 +39,37 @@
                         CommandParameter="{x:Type views:CustomPointPage}" />
             </TableSection>
 
+            <TableSection Title="DevExpress Chart for MAUI - Bubbles are colored by underlying values">
+                <TextCell 
+                        Text="In this example, the bubble chart displays GDP values for the G20. A point's size indicates the country population and the color indicates the [HPI]."
+                        Detail="https://docs.devexpress.com/MAUI/DevExpress.Maui.Charts.CustomValueBandPointColorizer"    
+                        Command="{Binding NavigateCommand}"
+                        CommandParameter="{x:Type views:CustomValueRangePage}" />
+            </TableSection>
+
+            <TableSection Title="Candlestick Financial Chart with Volume Bars">
+                <TextCell 
+                        Text="This example demonstrates how to display overlay information on a financial chart: trading volume bars, financial indicators, and time frame selectors."
+                        Detail="https://docs.devexpress.com/MAUI/DevExpress.Maui.Charts.CandleStickSeries"    
+                        Command="{Binding NavigateCommand}"
+                        CommandParameter="{x:Type views:FinancialCandlestickWithOverlayPage}" />
+            </TableSection>
+
+            <TableSection Title="DevExpress Financial Chart">
+                <TextCell 
+                        Text="This example demonstrates how to use DevExpress Charts for .NET MAUI to show financial data."
+                        Detail="https://docs.devexpress.com/MAUI/DevExpress.Maui.Charts.CandleStickSeries"    
+                        Command="{Binding NavigateCommand}"
+                        CommandParameter="{x:Type views:FinancialChartPage}" />
+            </TableSection>
+
+            <TableSection Title="Color Points Based on String Data Source Values">
+                <TextCell 
+                        Text="In this example, the bar chart visualizes GDP values for the G20 and colors data points according to which part of the world the country belongs."
+                        Detail="https://docs.devexpress.com/MAUI/DevExpress.Maui.Charts.IIndexBasedCustomPointColorizer"    
+                        Command="{Binding NavigateCommand}"
+                        CommandParameter="{x:Type views:IndexBasedCustomPointPage}" />
+            </TableSection>
         </TableRoot>
     </TableView>
 </ContentPage>

@@ -112,6 +112,9 @@
 	  <Compile Update="Pages\DevExpress\ColorPointPage.xaml.cs">
 	    <DependentUpon>ColorPointPage.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Pages\DevExpress\IndexBasedCustomPointPage.xaml.cs">
+	    <DependentUpon>IndexBasedCustomPointPage.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Pages\First\FirstMauiPage.xaml.cs">
 	    <DependentUpon>FirstMauiPage.xaml</DependentUpon>
 	  </Compile>
@@ -148,7 +151,19 @@
 	  <MauiXaml Update="Pages\DevExpress\CustomPointPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Pages\DevExpress\CustomValueRangePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\DevExpress\DevExpressChartPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\DevExpress\FinancialCandlestickWithOverlayPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\DevExpress\FinancialChartPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\DevExpress\IndexBasedCustomPointPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\Gallery\AbsoluteLayoutDemoPage.xaml">

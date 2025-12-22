@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dx="http://schemas.devexpress.com/maui"
+             xmlns:local="clr-namespace:Tutorials.ViewModels"
+             x:Class="Tutorials.Pages.FinancialChartPage"
+             Title="FinancialChartPage">
+    <ContentPage.BindingContext>
+        <local:FinancialChartViewModel/>
+    </ContentPage.BindingContext>
+    <dx:ChartView x:Name="chart"
+                   SelectionMode="None"
+                   AxisXNavigationMode="ScrollingAndZooming">
+
+        <dx:ChartView.Series>
+
+            <dx:BarSeries DisplayName="Volume">
+                <dx:BarSeries.Data>
+                    <dx:SeriesDataAdapter DataSource="{Binding StockPrices}" ArgumentDataMember="Date">
+                        <dx:ValueDataMember Type="Value" Member="Volume" />
+                    </dx:SeriesDataAdapter>
+                </dx:BarSeries.Data>
+
+                <dx:BarSeries.HintOptions>
+                    <dx:SeriesCrosshairOptions PointTextPattern="Volume: ${V$#,###}" />
+                </dx:BarSeries.HintOptions>
+
+                <dx:BarSeries.Style>
+                    <dx:BarSeriesStyle Fill="#ff2196F3"/>
+                </dx:BarSeries.Style>
+
+                <dx:BarSeries.AxisY>
+                    <dx:NumericAxisY>
+                        <dx:NumericAxisY.LabelValueNotation>
+                            <dx:AxisLabelEngineeringNotation/>
+                        </dx:NumericAxisY.LabelValueNotation>
+                        <dx:NumericAxisY.Layout>
+                            <dx:AxisLayout Anchor1="0" Anchor2="0.25" />
+                        </dx:NumericAxisY.Layout>
+                        <dx:NumericAxisY.DisplayPosition>
+                            <dx:AxisDisplayPositionNear/>
+                        </dx:NumericAxisY.DisplayPosition>
+                        <dx:NumericAxisY.Label>
+                            <dx:AxisLabel Position="Inside" TextFormat="$#"/>
+                        </dx:NumericAxisY.Label>
+                        <dx:NumericAxisY.Style>
+                            <dx:AxisStyle MajorGridlinesVisible="True"
+                                           LineColor="#8f2196F3"
+                                           MajorGridlinesColor="#8f2196F3"/>
+                        </dx:NumericAxisY.Style>
+                    </dx:NumericAxisY>
+                </dx:BarSeries.AxisY>
+            </dx:BarSeries>
+
+            <dx:CandleStickSeries DisplayName="Price">
+                <dx:CandleStickSeries.Data>
+                    <dx:SeriesDataAdapter DataSource="{Binding StockPrices}" ArgumentDataMember="Date">
+                        <dx:ValueDataMember Type="High" Member="High" />
+                        <dx:ValueDataMember Type="Low" Member="Low" />
+                        <dx:ValueDataMember Type="Open" Member="Open" />
+                        <dx:ValueDataMember Type="Close" Member="Close" />
+                    </dx:SeriesDataAdapter>
+                </dx:CandleStickSeries.Data>
+                <dx:CandleStickSeries.HintOptions>
+                    <dx:SeriesCrosshairOptions PointTextPattern="High: ${H$###.##}&#10;Low: ${L$###.##}&#10;Open: ${O$###.##}&#10;Close: ${C$###.##}" />
+                </dx:CandleStickSeries.HintOptions>
+            </dx:CandleStickSeries>
+
+            <dx:BollingerBandsIndicator DisplayName="BollingerBands 10"
+                                         PointsCount="10">
+                <dx:BollingerBandsIndicator.Data>
+                    <dx:CalculatedSeriesDataAdapter Series="{Binding Series[1], Source={x:Reference chart}}"/>
+                </dx:BollingerBandsIndicator.Data>
+                <dx:BollingerBandsIndicator.Style>
+                    <dx:BollingerBandsIndicatorStyle Stroke="#e95ddc"
+                                                      UpperStroke="#e95ddc"
+                                                      LowerStroke="#e95ddc" />
+                </dx:BollingerBandsIndicator.Style>
+                <dx:BollingerBandsIndicator.HintOptions>
+                    <dx:SeriesCrosshairOptions PointTextPattern="{}{S}: &#10;Upper: ${UV$###.##}&#10;Value: ${V$###.##}&#10;Lower: ${LV$###.##}" />
+                </dx:BollingerBandsIndicator.HintOptions>
+            </dx:BollingerBandsIndicator>
+
+            <dx:MovingAverageIndicator DisplayName="SMA 50"
+                                        PointsCount="50">
+                <dx:MovingAverageIndicator.Data>
+                    <dx:CalculatedSeriesDataAdapter Series="{Binding Series[1], Source={x:Reference chart}}"/>
+                </dx:MovingAverageIndicator.Data>
+                <dx:MovingAverageIndicator.Style>
+                    <dx:BollingerBandsIndicatorStyle Stroke="#9859c9" />
+                </dx:MovingAverageIndicator.Style>
+                <dx:MovingAverageIndicator.HintOptions>
+                    <dx:SeriesCrosshairOptions PointTextPattern="{}{S}: ${V$###.##}" />
+                </dx:MovingAverageIndicator.HintOptions>
+            </dx:MovingAverageIndicator>
+
+        </dx:ChartView.Series>
+
+        <dx:ChartView.AxisY>
+            <dx:NumericAxisY AlwaysShowZeroLevel="False"
+                              AutoRangeMode="VisibleValues">
+                <dx:NumericAxisY.DisplayPosition>
+                    <dx:AxisDisplayPositionFar />
+                </dx:NumericAxisY.DisplayPosition>
+                <dx:NumericAxisY.Label>
+                    <dx:AxisLabel Position="Inside"
+                                   TextFormat="$#"/>
+                </dx:NumericAxisY.Label>
+            </dx:NumericAxisY>
+        </dx:ChartView.AxisY>
+
+        <!--<dx:ChartView.AxisX>
+            <dx:DateTimeAxisX Range="{Binding VisualRange}"
+                               MeasureUnit="Day"
+                               EmptyRangesVisible="False"/>
+        </dx:ChartView.AxisX>-->
+
+        <dx:ChartView.Hint>
+            <dx:Hint>
+                <dx:Hint.Behavior>
+                    <dx:CrosshairHintBehavior MaxSeriesCount="4" />
+                </dx:Hint.Behavior>
+            </dx:Hint>
+        </dx:ChartView.Hint>
+
+        <dx:ChartView.Legend>
+            <dx:Legend HorizontalPosition="Left"
+                        VerticalPosition="Top" />
+        </dx:ChartView.Legend>
+
+    </dx:ChartView>
+
+</ContentPage>
+    
+    

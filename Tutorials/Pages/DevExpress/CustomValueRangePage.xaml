@@ -1,0 +1,55 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dx="http://schemas.devexpress.com/maui"
+             xmlns:local="clr-namespace:Tutorials.ViewModels"
+             x:Class="Tutorials.Pages.CustomValueRangePage">
+
+    <ContentPage.BindingContext>
+        <local:CustomValueRangeViewModel/>
+    </ContentPage.BindingContext>
+    <dx:ChartView Rotated="True">
+        <dx:ChartView.Series>
+            <dx:BubbleSeries LegendTextPattern="{}{CLV} - {CHV} HPI">
+                <dx:BubbleSeries.Data>
+                    <dx:SeriesDataAdapter DataSource="{Binding CountryStatisticsData}" 
+                                           ArgumentDataMember="Country">
+                        <dx:ValueDataMember Type="Value" Member="Gdp"/>
+                        <dx:ValueDataMember Type="Weight" Member="Population"/>
+                    </dx:SeriesDataAdapter>
+                </dx:BubbleSeries.Data>
+
+                <dx:BubbleSeries.PointColorizer>
+                    <dx:CustomValueBandPointColorizer 
+                        ValueProvider="{local:HpiProvider}">
+                        <dx:CustomValueBandPointColorizer.ColorStops>
+                            <dx:ColorStop Color="#CCff5a19" Value1="22" Value2="30"/>
+                            <dx:ColorStop Color="#CCfead2d" Value1="30" Value2="38"/>
+                            <dx:ColorStop Color="#CCe5e335" Value1="38" Value2="46"/>
+                            <dx:ColorStop Color="#CCace45c" Value1="46" Value2="54"/>
+                            <dx:ColorStop Color="#CC6ec95b" Value1="54" Value2="64"/>
+                        </dx:CustomValueBandPointColorizer.ColorStops>
+                    </dx:CustomValueBandPointColorizer>
+                </dx:BubbleSeries.PointColorizer>
+            </dx:BubbleSeries>
+        </dx:ChartView.Series>
+
+        <dx:ChartView.AxisX>
+            <dx:QualitativeAxisX>
+                <dx:QualitativeAxisX.Style>
+                    <dx:AxisStyle MajorTickmarksVisible="True" MajorGridlinesVisible="True"/>
+                </dx:QualitativeAxisX.Style>
+            </dx:QualitativeAxisX>
+        </dx:ChartView.AxisX>
+        <dx:ChartView.AxisY>
+            <dx:NumericAxisY>
+                <dx:NumericAxisY.Title>
+                    <dx:AxisTitle Text="GDP per capita, $"/>
+                </dx:NumericAxisY.Title>
+            </dx:NumericAxisY>
+        </dx:ChartView.AxisY>
+        <dx:ChartView.Legend>
+            <dx:Legend VerticalPosition="BottomOutside" HorizontalPosition="Center" Orientation="LeftToRight"/>
+        </dx:ChartView.Legend>
+    </dx:ChartView>
+
+</ContentPage>
