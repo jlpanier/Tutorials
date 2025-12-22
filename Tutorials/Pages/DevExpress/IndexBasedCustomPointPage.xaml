@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dx="http://schemas.devexpress.com/maui"
+            xmlns:local="clr-namespace:Tutorials.ViewModels"
+             x:Class="Tutorials.Pages.IndexBasedCustomPointPage"
+             Title="IndexBasedCustomPoint">
+        <ContentPage.BindingContext>
+        <local:IndexBasedCustomPointColorizerViewModel/>
+        </ContentPage.BindingContext>
+        <dx:ChartView Rotated="True">
+            <dx:ChartView.Series>
+            <dx:BarSeries PointColorizer="{local:IndexBasedCustomPointColorizerByRegion}">
+                    <dx:BarSeries.Data>
+                        <dx:SeriesDataAdapter DataSource="{Binding CountryStatisticsData}"
+                                           ArgumentDataMember="Country">
+                            <dx:ValueDataMember Type="Value" Member="Gdp"/>
+                        </dx:SeriesDataAdapter>
+                    </dx:BarSeries.Data>
+                </dx:BarSeries>
+            </dx:ChartView.Series>
+
+            <dx:ChartView.AxisX>
+                <dx:QualitativeAxisX>
+                    <dx:QualitativeAxisX.Style>
+                        <dx:AxisStyle MajorTickmarksVisible="True"/>
+                    </dx:QualitativeAxisX.Style>
+                </dx:QualitativeAxisX>
+            </dx:ChartView.AxisX>
+            <dx:ChartView.AxisY>
+                <dx:NumericAxisY>
+                    <dx:NumericAxisY.Style>
+                        <dx:AxisStyle MajorTickmarksVisible="True"
+                                   MinorTickmarksVisible="True"/>
+                    </dx:NumericAxisY.Style>
+                    <dx:NumericAxisY.Title>
+                        <dx:AxisTitle Text="GDP per capita, millions USD"/>
+                    </dx:NumericAxisY.Title>
+                </dx:NumericAxisY>
+            </dx:ChartView.AxisY>
+            <dx:ChartView.Legend>
+                <dx:Legend HorizontalPosition="Center"
+                        VerticalPosition="BottomOutside"
+                        Orientation="LeftToRight"/>
+            </dx:ChartView.Legend>
+        </dx:ChartView>
+
+    </ContentPage>
