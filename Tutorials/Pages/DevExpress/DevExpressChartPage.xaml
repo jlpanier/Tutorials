@@ -70,6 +70,47 @@
                         Command="{Binding NavigateCommand}"
                         CommandParameter="{x:Type views:IndexBasedCustomPointPage}" />
             </TableSection>
+
+            <TableSection Title="Color Points Based Line">
+                <TextCell 
+                        Text="In this example, the bar chart visualizes GDP values for the G20 and colors data points according to which part of the world the country belongs."
+                        Detail="https://docs.devexpress.com/MAUI/DevExpress.Maui.Charts.IIndexBasedCustomPointColorizer"    
+                        Command="{Binding NavigateCommand}"
+                        CommandParameter="{x:Type views:LineSegmentPage}" />
+            </TableSection>
+
+            <TableSection Title="DevExpress Pie Chart">
+                <TextCell 
+                        Text="This example allows you to get started with the **PieChartView** component and explore its basic functionality."
+                        Detail="https://docs.devexpress.com/MAUI/DevExpress.Maui.Charts.PieChartView"    
+                        Command="{Binding NavigateCommand}"
+                        CommandParameter="{x:Type views:PieChartPage}" />
+            </TableSection>
+
+            <TableSection Title="DevExpress Scatter Chart">
+                <TextCell 
+                        Text="This example allows you to get started with."
+                        Detail="https://docs.devexpress.com/MAUI/DevExpress.Maui.Charts.ChartView"    
+                        Command="{Binding NavigateCommand}"
+                        CommandParameter="{x:Type views:ScatterChartPage}" />
+            </TableSection>
+
+            <TableSection Title="Custom Format to Pie Slice Labels">
+                <TextCell 
+                        Text="This example configures pie chart settings and runtime, and shows how to create a custom formatter for point labels."
+                        Detail="https://docs.devexpress.com/MAUI/DevExpress.Maui.Charts.ISeriesLabelTextProvider"    
+                        Command="{Binding NavigateCommand}"
+                        CommandParameter="{x:Type views:CustomPieSliceChartPage}" />
+            </TableSection>
+
+            <TableSection Title="Color Points by Their Values">
+                <TextCell 
+                        Text="In this example, the bar chart displays cryptocurrency portfolio yield. It colors series points red when their Y-axis values are between **-100** and **0**, and green when values are between **0** and **100**."
+                        Detail="https://docs.devexpress.com/MAUI/DevExpress.Maui.Charts.ValueBandPointColorizer"    
+                        Command="{Binding NavigateCommand}"
+                        CommandParameter="{x:Type views:ColorPointsValuesChartPage}" />
+            </TableSection>
+
         </TableRoot>
     </TableView>
 </ContentPage>
