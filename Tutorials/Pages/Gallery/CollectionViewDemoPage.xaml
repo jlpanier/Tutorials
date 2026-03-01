@@ -15,7 +15,7 @@
         <CollectionView ItemsSource="{Binding Monkeys}"
                         ItemsLayout="VerticalGrid, 2">
             <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="models:Monkey">
+                <DataTemplate x:DataType="viewmodel:MonkeyViewModel">
                     <Grid Padding="10">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="35" />

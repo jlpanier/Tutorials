@@ -1,10 +1,6 @@
 ﻿namespace Tutorials.Models
 {
-    public class Monkey
+    public class MonkeyObs:Business.Monkey
     {
-        public string Name { get; set; }
-        public string Location { get; set; }
-        public string Details { get; set; }
-        public string ImageUrl { get; set; }
     }
 }

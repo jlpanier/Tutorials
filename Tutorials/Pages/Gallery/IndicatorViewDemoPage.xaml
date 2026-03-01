@@ -14,7 +14,7 @@
         <CarouselView ItemsSource="{Binding Monkeys}"
                       IndicatorView="indicatorView">
             <CarouselView.ItemTemplate>
-                <DataTemplate x:DataType="models:Monkey">
+                <DataTemplate x:DataType="viewmodel:MonkeyViewModel">
                     <StackLayout>
                         <Border Stroke="DarkGray"
                                 StrokeShape="RoundRectangle 5"

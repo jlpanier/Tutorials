@@ -1,4 +1,3 @@
-using Tutorials.Models;
 using Tutorials.ViewModels;
 
 namespace Tutorials.Pages;
