@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.0.11222.15 d18.0
+VisualStudioVersion = 18.0.11222.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorials", "Tutorials\Tutorials.csproj", "{40BE5AF6-A3B0-4EC5-9447-AE3641563BDC}"
 EndProject
@@ -17,6 +17,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurieXplorePays", "CurieXplorePays\CurieXplorePays.csproj", "{1D6601C4-8457-43BD-9D96-835F98620CA6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestCountries", "RestCountries\RestCountries.csproj", "{44DA3544-F99F-471B-BC62-5CF5399F5301}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{2DC9192E-E2CA-4998-A4DE-A8CF07315618}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{44DA3544-F99F-471B-BC62-5CF5399F5301}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44DA3544-F99F-471B-BC62-5CF5399F5301}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44DA3544-F99F-471B-BC62-5CF5399F5301}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DC9192E-E2CA-4998-A4DE-A8CF07315618}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DC9192E-E2CA-4998-A4DE-A8CF07315618}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DC9192E-E2CA-4998-A4DE-A8CF07315618}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DC9192E-E2CA-4998-A4DE-A8CF07315618}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
