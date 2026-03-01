@@ -5,6 +5,7 @@
     xmlns:viewmodel="clr-namespace:Tutorials.ViewModels"
     xmlns:models="clr-namespace:Tutorials.Models"
     x:Class="Tutorials.Pages.UnicodePage"
+    x:DataType="viewmodel:UnicodeViewModel"
     >
     <CollectionView ItemsSource="{Binding Items}" SelectionMode="None">
 
