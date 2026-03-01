@@ -1,12 +1,12 @@
 ﻿using CommunityToolkit.Maui;
-using FFImageLoading.Maui;
-using Tutorials.Pages;
-using Tutorials.ViewModels;
-using Tutorials.ViewModels;
-using Microsoft.Extensions.Logging;
-using Syncfusion.Maui.Toolkit.Hosting;
-using Syncfusion.Maui.Core.Hosting;
+using CommunityToolkit.Maui.Services;
 using DevExpress.Maui;
+using FFImageLoading.Maui;
+using Microsoft.Extensions.Logging;
+using Syncfusion.Maui.Core.Hosting;
+using Syncfusion.Maui.Toolkit.Hosting;
+using Tutorials.Pages.Popup;
+using Tutorials.ViewModels;
 
 namespace Tutorials
 {
@@ -60,11 +60,15 @@ namespace Tutorials
 #endif
             builder.Services.AddSingleton<MainPage>();
             builder.Services.AddSingleton<MainViewModel>();
+            builder.Services.AddSingleton<IPopupService, PopupService>();
 
             builder.Services.AddTransient<DetailPage>();
             builder.Services.AddTransient<DetailViewModel>();
 
- 
+            builder.Services.AddTransient<PopupsPage>();
+            builder.Services.AddTransient<PopupsViewModel>();
+            builder.Services.AddTransient<SimplePopup>();
+
             return builder.Build();
         }
     }
