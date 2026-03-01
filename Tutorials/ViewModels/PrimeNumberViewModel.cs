@@ -1,11 +1,7 @@
-﻿using ExCSS;
-using Tutorials.Models;
-using Repository.Dbo;
-using Repository.Entities;
+﻿using Tutorials.Models;
 using Syncfusion.Maui.DataSource.Extensions;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 

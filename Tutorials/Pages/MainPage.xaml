@@ -53,10 +53,10 @@
                          Command="{Binding NavigateCommand}"
                          CommandParameter="{x:Type views:ColorsPage}" />
 
-                    <!--<TextCell Text="Popup"
+                    <TextCell Text="Popup"
                          Detail="Différentes popup"
                          Command="{Binding NavigateCommand}"
-                         CommandParameter="{x:Type views:PopupsPage}" />-->
+                         CommandParameter="{x:Type views:PopupsPage}" />
 
                 </TableSection>
             </TableRoot>

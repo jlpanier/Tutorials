@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewmodel="clr-namespace:Tutorials.ViewModels"
+    xmlns:views="clr-namespace:Tutorials.Pages.Popup"
+    x:Class="Tutorials.Pages.PopupsPage"
+    >
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="12">
+            <Button Text="Simple Popup" Clicked="HandleSimplePopupButtonClicked" />
+        </VerticalStackLayout>
+    </ScrollView>
+    
+</ContentPage>

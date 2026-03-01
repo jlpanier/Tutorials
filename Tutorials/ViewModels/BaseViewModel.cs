@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace Tutorials.Pages.Base
+namespace Tutorials.ViewModels
 {
     public abstract partial class BaseViewModel : ObservableObject
     {

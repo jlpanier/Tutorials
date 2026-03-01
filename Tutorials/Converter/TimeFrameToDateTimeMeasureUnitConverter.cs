@@ -11,7 +11,7 @@ namespace Tutorials.Converter
 {
     public class TimeFrameToDateTimeMeasureUnitConverter : IValueConverter
     {
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
         {
             if (!(value is TimeFrame timeFrame) || targetType != typeof(DateTimeMeasureUnit)) return null;
             switch (timeFrame)
@@ -29,7 +29,7 @@ namespace Tutorials.Converter
                     throw new NotSupportedException();
             }
         }
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
         {
             throw new NotSupportedException();
         }

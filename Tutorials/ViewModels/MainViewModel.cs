@@ -4,12 +4,15 @@ using System.Windows.Input;
 
 namespace Tutorials.ViewModels
 {
+
     public partial class MainViewModel: ObservableObject
     {
+        readonly IServiceProvider _services;
         public ICommand NavigateCommand { get; }
 
-        public MainViewModel()
+        public MainViewModel(IServiceProvider services)
         {
+            _services = services;
             NavigateCommand = new Command<Type>(OnNavigate);
         }
 
