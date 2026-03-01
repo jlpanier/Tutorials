@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodel="clr-namespace:Tutorials.ViewModels"
              xmlns:views="clr-namespace:Tutorials.Pages"
-             x:Class="Tutorials.Pages.MainPage">
+             x:Class="Tutorials.Pages.MainPage"
+             x:DataType="viewmodel:MainViewModel"
+             >
 
    
     <ContentView Padding="20">
@@ -50,6 +52,11 @@
                          Detail="Définition des couleurs NETMAUI"
                          Command="{Binding NavigateCommand}"
                          CommandParameter="{x:Type views:ColorsPage}" />
+
+                    <!--<TextCell Text="Popup"
+                         Detail="Différentes popup"
+                         Command="{Binding NavigateCommand}"
+                         CommandParameter="{x:Type views:PopupsPage}" />-->
 
                 </TableSection>
             </TableRoot>
