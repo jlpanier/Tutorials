@@ -1,14 +1,13 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using System.Windows.Input;
 
-
 namespace Tutorials.ViewModels
 {
-    public partial class MainViewModel: ObservableObject
+    public partial class TableViewMenuDemoViewModel : ObservableObject
     {
         public ICommand NavigateCommand { get; }
 
-        public MainViewModel()
+        public TableViewMenuDemoViewModel()
         {
             NavigateCommand = new Command<Type>(OnNavigate);
         }
@@ -22,6 +21,5 @@ namespace Tutorials.ViewModels
                 await Shell.Current.Navigation.PushAsync(page);
             }
         }
-
     }
 }

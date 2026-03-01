@@ -2,8 +2,10 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:views="clr-namespace:Tutorials.Pages"
+             xmlns:viewmodel="clr-namespace:Tutorials.ViewModels"
              x:Class="Tutorials.Pages.TableViewMenuDemoPage"
              Title="TableViewMenuDemoPage"
+             x:DataType="viewmodel:TableViewMenuDemoViewModel"
              >
     <StackLayout>
         <Label Text="TableView Menu"
