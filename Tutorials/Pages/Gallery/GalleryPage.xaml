@@ -4,6 +4,7 @@
              xmlns:viewmodel="clr-namespace:Tutorials.ViewModels"
              xmlns:views="clr-namespace:Tutorials.Pages"
              x:Class="Tutorials.Pages.GalleryPage"
+             x:DataType="viewmodel:GalleryViewModel"
              Title="GalleryPage">
 
     <TableView Intent="Menu" >

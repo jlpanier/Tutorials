@@ -1,14 +1,13 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using System.Windows.Input;
 
-
 namespace Tutorials.ViewModels
 {
-    public partial class MainViewModel: ObservableObject
+    public partial class GalleryViewModel : ObservableObject
     {
         public ICommand NavigateCommand { get; }
 
-        public MainViewModel()
+        public GalleryViewModel()
         {
             NavigateCommand = new Command<Type>(OnNavigate);
         }
@@ -17,12 +16,10 @@ namespace Tutorials.ViewModels
         {
             if (pageType == null) return;
 
-            // Instanciation dynamique de la page
-            var page = (Page)Activator.CreateInstance(pageType);
-
-            // Navigation
-            await Shell.Current.Navigation.PushAsync(page);
+            if (Activator.CreateInstance(pageType) is Page page)
+            {
+                await Shell.Current.Navigation.PushAsync(page);
+            }
         }
-
     }
 }
