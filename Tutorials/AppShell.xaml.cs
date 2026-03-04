@@ -14,7 +14,6 @@ namespace Tutorials
             ThemeSegmentedControl.SelectedIndex = currentTheme == AppTheme.Light ? 0 : 1;
 
             Routing.RegisterRoute(nameof(DetailPage), typeof(DetailPage));
-            Routing.RegisterRoute(nameof(PopupsPage), typeof(PopupsPage));
         }
 
         public static async Task DisplaySnackbarAsync(string message)

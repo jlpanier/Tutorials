@@ -95,6 +95,14 @@ namespace Tutorials.ViewModels
             });
             CandleIntervals = new ObservableCollection<TimeFrame> { TimeFrame.M15, TimeFrame.M30, TimeFrame.H1, TimeFrame.H2, TimeFrame.H4, TimeFrame.D };
             SelectedCandleInterval = CandleIntervals[0];
+            stockPrices = new List<HistoricalPrice>()
+            {
+                new HistoricalPrice(DateTime.Now.AddDays(-5), 8,15,8,11,100),
+                new HistoricalPrice(DateTime.Now.AddDays(-4), 9,16,9,12,150),
+                new HistoricalPrice(DateTime.Now.AddDays(-3), 10,17,10,13,200),
+                new HistoricalPrice(DateTime.Now.AddDays(-2), 11,18,11,14,250),
+                new HistoricalPrice(DateTime.Now.AddDays(-1), 12,19,12,15,300),
+            };
         }
 
         void UpdateRangeToStickToEnd()
@@ -107,7 +115,7 @@ namespace Tutorials.ViewModels
     }
     public class BindableBase : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
         public void RaisePropertyChanged([CallerMemberName] string propertyName = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

@@ -141,6 +141,7 @@ namespace Tutorials.ViewModels
             };
             TotalReplies = ComponentReplyInfos.Sum(ri => ri.Count);
             UpdateSelectionProperties();
+            SelectedDataItem= new ComponentReplyInfo("Name", 11, 150, 200, 10, 50);
         }
         void UpdateSelectionProperties()
         {

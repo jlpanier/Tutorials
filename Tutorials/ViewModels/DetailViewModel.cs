@@ -8,7 +8,7 @@ namespace Tutorials.ViewModels
     public partial class DetailViewModel:ObservableObject
     {
         [ObservableProperty]
-        private string text;
+        private string text = "";
 
         [RelayCommand]
         async Task GoBack()
