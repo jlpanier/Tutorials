@@ -5,7 +5,6 @@ using FFImageLoading.Maui;
 using Microsoft.Extensions.Logging;
 using Syncfusion.Maui.Core.Hosting;
 using Syncfusion.Maui.Toolkit.Hosting;
-using Tutorials.Pages.Popup;
 using Tutorials.ViewModels;
 
 namespace Tutorials
@@ -65,9 +64,6 @@ namespace Tutorials
             builder.Services.AddTransient<DetailPage>();
             builder.Services.AddTransient<DetailViewModel>();
 
-            builder.Services.AddTransient<PopupsPage>();
-            builder.Services.AddTransient<PopupsViewModel>();
-            builder.Services.AddTransient<SimplePopup>();
 
             return builder.Build();
         }
