@@ -21,24 +21,26 @@ namespace Tutorials.ViewModels
             {
                 if (field.FieldType == typeof(Color))
                 {
-                    var color = (Color)field.GetValue(null);
-                    ColorsList.Add(new ColorItem
+                    var val = field.GetValue(null);
+                    if (val is Color color)
                     {
-                        Name = field.Name,
-                        Value = color,
-                        Hex = color.ToHex()
-                    });
+                        ColorsList.Add(new ColorItem
+                        {
+                            Name = field.Name,
+                            Value = color,
+                            Hex = color.ToHex()
+                        });
+                    }
                 }
             }
-
         }
     }
 
     public class ColorItem
     {
-        public string Name { get; set; }
-        public Color Value { get; set; }
-        public string Hex { get; set; }
+        public string Name { get; set; } = "";
+        public Color Value { get; set; } = Colors.AliceBlue;
+        public string Hex { get; set; } = "";
     }
 
 }
