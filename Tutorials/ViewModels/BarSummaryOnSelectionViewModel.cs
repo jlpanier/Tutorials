@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
 
 namespace Tutorials.ViewModels
 {
@@ -17,7 +10,7 @@ namespace Tutorials.ViewModels
         float selectionAvgIterations;
         int selectionThreadsCount;
         float selectionCompletedThreadsProgress;
-        ComponentReplyInfo selectedDataItem;
+        
         public string EmptySelectionString = "All Components";
         public string PeriodText
         {
@@ -29,7 +22,7 @@ namespace Tutorials.ViewModels
             get;
             set;
         }
-        public ComponentReplyInfo SelectedDataItem
+        public ComponentReplyInfo? SelectedDataItem
         {
             get
             {
@@ -42,6 +35,8 @@ namespace Tutorials.ViewModels
                 UpdateSelectionProperties();
             }
         }
+        private ComponentReplyInfo? selectedDataItem;
+
         public string SelectedComponentString
         {
             get
