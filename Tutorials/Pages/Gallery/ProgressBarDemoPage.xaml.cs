@@ -2,14 +2,17 @@ namespace Tutorials.Pages;
 
 public partial class ProgressBarDemoPage : ContentPage
 {
-    IDispatcherTimer timer;
+    IDispatcherTimer? timer;
 
     public ProgressBarDemoPage()
     {
         InitializeComponent();
     }
 
-    ~ProgressBarDemoPage() => timer.Tick -= OnTimerTick;
+    ~ProgressBarDemoPage() 
+    {
+        if (timer != null) timer.Tick -= OnTimerTick;
+    }
 
     protected override void OnAppearing()
     {
@@ -21,7 +24,7 @@ public partial class ProgressBarDemoPage : ContentPage
         timer.Start();
     }
 
-    void OnTimerTick(object sender, EventArgs e)
+    void OnTimerTick(object? sender, EventArgs e)
     {
         progressBar.Progress += 0.01;
         if (progressBar.Progress == 1)

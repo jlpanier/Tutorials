@@ -60,8 +60,8 @@ public partial class CustomPieSliceChartPage : ContentPage
 
     public class DataItem
     {
-        public string Label { get; set; }
-        public double Value { get; set; }
+        public string Label { get; set; } = "";
+        public double Value { get; set; } 
     }
 
 }

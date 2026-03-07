@@ -14,8 +14,10 @@ public partial class NavigationPageDemoPage : ContentPage
         string id = btn.StyleId;
 
         Assembly assembly = GetType().GetTypeInfo().Assembly;
-        Type pageType = assembly.GetType("Maui.Tutorials.Pages." + id);
-        Page page = (Page)Activator.CreateInstance(pageType);
-        await Navigation.PushAsync(page);
+        Type? pageType = assembly.GetType("Maui.Tutorials.Pages." + id);
+        if (pageType != null && Activator.CreateInstance(pageType) is Page page)
+        {
+            await Navigation.PushAsync(page);
+        }
     }
 }
