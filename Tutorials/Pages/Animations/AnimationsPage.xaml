@@ -31,6 +31,10 @@
                            Detail="Animation d'une image en mouvement"
                            Command="{Binding NavigateCommand}"
                            CommandParameter="{x:Type views:TranslatePage}" />
+                <TextCell Text="Fade area Animation"
+                           Detail="Animation d'une image en mouvement"
+                           Command="{Binding NavigateCommand}"
+                           CommandParameter="{x:Type views:FadePressPage}" />
             </TableSection>
         </TableRoot>
     </TableView>

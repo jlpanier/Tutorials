@@ -5,6 +5,7 @@ using FFImageLoading.Maui;
 using Microsoft.Extensions.Logging;
 using Syncfusion.Maui.Core.Hosting;
 using Syncfusion.Maui.Toolkit.Hosting;
+using Tutorials.Extensions;
 using Tutorials.ViewModels;
 
 namespace Tutorials
@@ -25,8 +26,11 @@ namespace Tutorials
                 .UseFFImageLoading()
                 .ConfigureMauiHandlers(handlers =>
                 {
+#if ANDROID
+                    handlers.AddHandler(typeof(PressableView), typeof(Platforms.Android.Renderers.PressableViewRenderer));
+#endif
 #if IOS || MACCATALYST
-    				handlers.AddHandler<Microsoft.Maui.Controls.CollectionView, Microsoft.Maui.Controls.Handlers.Items2.CollectionViewHandler2>();
+                    handlers.AddHandler<Microsoft.Maui.Controls.CollectionView, Microsoft.Maui.Controls.Handlers.Items2.CollectionViewHandler2>();
 #endif
                 })
                 .ConfigureFonts(fonts =>

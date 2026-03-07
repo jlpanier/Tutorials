@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 
 namespace Tutorials.Models
 {
@@ -91,7 +90,7 @@ namespace Tutorials.Models
             }
             set
             {
-                if (_color!=null && _color != value)
+                if (_color!=null && _color != value && value !=null)
                 {
                     _color = value;
                     _hue = _color!.GetHue();

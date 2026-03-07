@@ -87,6 +87,9 @@
 	  <MauiXaml Update="Pages\Animations\FadePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Pages\Animations\FadePressPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\Animations\RotatePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
