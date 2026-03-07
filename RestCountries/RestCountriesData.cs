@@ -10,12 +10,12 @@
         /// <summary>
         /// Code iso2 du pays/territoire
         /// </summary>
-        public string cca3 { get; set; }
+        public string cca3 { get; set; } = "";
 
         /// <summary>
         /// Capital
         /// </summary>
-        public List<string> capital { get; set; }
+        public List<string> capital { get; set; } = new List<string>();
 
         /// <summary>
         /// area

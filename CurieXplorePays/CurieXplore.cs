@@ -42,9 +42,9 @@ namespace CurieXplorePays
         {
             var result = new List<CurieXploreData>();
             var items = await Call(url);
-            if (items != null && items.results.Any())
+            if (items != null && items.results!.Any())
             {
-                result.AddRange(items.results);
+                result.AddRange(items.results!);
             }
             return result;
         }

@@ -208,7 +208,7 @@ namespace Tutorials.Models
         /// <summary>
         /// Liste des capitales du pays
         /// </summary>
-        public string Capital { get; set; }
+        public string Capital { get; set; } = "";
 
         /// <summary>
         /// Area
@@ -258,7 +258,7 @@ namespace Tutorials.Models
             Borders = data.borders;
             Flag = data.flag;
             Mobility = data.cf_mobility;
-            LatLng = new Gps(data.latlng.lat, data.latlng.lon);
+            LatLng = new Gps(data.latlng!.lat, data.latlng.lon);
             Wikidata = data.wikidata;
             Bologne = data.bologne == "True";
             Embassy = data.embassy == "True";
