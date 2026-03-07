@@ -81,10 +81,6 @@
                          Detail="Arrange children in a stack or a wrapped stack"
                          Command="{Binding NavigateCommand}"
                          CommandParameter="{x:Type views:FlexLayoutDemoPage}" />
-                <TextCell Text="FlyoutPage"
-                         Detail="Present two pages with a list and an item"
-                         Command="{Binding NavigateCommand}"
-                         CommandParameter="{x:Type views:FlyoutPageDemoPage}" />
                 <TextCell Text="GraphicsView"
                          Detail="Draw 2D graphics on a canvas"
                          Command="{Binding NavigateCommand}"

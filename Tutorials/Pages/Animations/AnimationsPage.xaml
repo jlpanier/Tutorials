@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewmodel="clr-namespace:Tutorials.ViewModels"
+    xmlns:views="clr-namespace:Tutorials.Pages.Animations"
+    x:Class="Tutorials.Pages.Animations.AnimationsPage"
+    Title="GalleryPage">
+
+    <TableView Intent="Menu">
+        <TableRoot>
+            <TableSection Title="Views for Presentation">
+
+                <TextCell Text="Custom Animation"
+                              Detail="Changement progressive de la couleur de fond d'écran"
+                              Command="{Binding NavigateCommand}"
+                              CommandParameter="{x:Type views:CustomAnimationPage}" />
+                <TextCell Text="Furtive Animation"
+                           Detail="Animation d'une image furtive"
+                           Command="{Binding NavigateCommand}"
+                           CommandParameter="{x:Type views:FadePage}" />
+                <TextCell Text="Rotation Animation"
+                           Detail="Animation d'une image rotative"
+                           Command="{Binding NavigateCommand}"
+                           CommandParameter="{x:Type views:RotatePage}" />
+                <TextCell Text="Dimension Animation"
+                           Detail="Animation d'un changement d'échelle"
+                           Command="{Binding NavigateCommand}"
+                           CommandParameter="{x:Type views:ScalePage}" />
+                <TextCell Text="Transfuge Animation"
+                           Detail="Animation d'une image en mouvement"
+                           Command="{Binding NavigateCommand}"
+                           CommandParameter="{x:Type views:TranslatePage}" />
+            </TableSection>
+        </TableRoot>
+    </TableView>
+    
+</ContentPage>
