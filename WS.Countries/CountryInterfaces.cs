@@ -1,11 +1,11 @@
 ﻿using System.Text.Json;
 
-namespace CurieXplorePays
+namespace WS.Countries
 {
     /// <summary>
     /// Gestion de l'interface : https://data.enseignementsup-recherche.gouv.fr
     /// </summary>
-    public class CurieXplore
+    public class CountryInterfaces
     {
         // https://data.enseignementsup-recherche.gouv.fr/explore/dataset/curiexplore-pays/api/?disjunctive.iso3
 
@@ -19,9 +19,9 @@ namespace CurieXplorePays
 
         public const string LowIncomeUrl = "https://data.enseignementsup-recherche.gouv.fr/api/explore/v2.1/catalog/datasets/curiexplore-pays/records?limit=80&refine=low_income%3A%22True%22";
 
-        public static async Task<List<CurieXploreData>> Get()
+        public static async Task<List<Country>> Get()
         {
-            var result = new List<CurieXploreData>();
+            var result = new List<Country>();
 
             var items = await Get(LowIncomeUrl);
             result.AddRange(items);
@@ -38,9 +38,9 @@ namespace CurieXplorePays
             return result;
         }
 
-        private static async Task<List<CurieXploreData>> Get(string url)
+        private static async Task<List<Country>> Get(string url)
         {
-            var result = new List<CurieXploreData>();
+            var result = new List<Country>();
             var items = await Call(url);
             if (items != null && items.results!.Any())
             {
@@ -49,7 +49,7 @@ namespace CurieXplorePays
             return result;
         }
 
-        private static async Task<CurieXploreHeader?> Call(string url)
+        private static async Task<CountryHeader?> Call(string url)
         {
             try
             {
@@ -60,20 +60,20 @@ namespace CurieXplorePays
                     response.EnsureSuccessStatusCode(); // Throws exception if the status code is not 2xx
 
                     var answer = await response.Content.ReadAsStringAsync();
-                    return JsonSerializer.Deserialize<CurieXploreHeader>(answer);
+                    return JsonSerializer.Deserialize<CountryHeader>(answer);
                 }
             }
             catch (ArgumentNullException)
             {
-                return new CurieXploreHeader();
+                return new CountryHeader();
             }
             catch (JsonException)
             {
-                return new CurieXploreHeader();
+                return new CountryHeader();
             }
             catch (NotSupportedException)
             {
-                return new CurieXploreHeader();
+                return new CountryHeader();
             }
         }
     }

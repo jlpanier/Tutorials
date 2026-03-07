@@ -1,14 +1,16 @@
-﻿using System.Text.Json;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace CurieXplorePays
+namespace WS.Countries
 {
     /// <summary>
     /// Gestion de l'interface : https://data.enseignementsup-recherche.gouv.fr
     /// </summary>
-    public class CurieXploreHeader
+    internal class CountryHeader
     {
         public int total_count { get; set; }
 
-        public List<CurieXploreData>? results { get; set; }
+        public List<Country>? results { get; set; }
     }
 }
