@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Tutorials.Models
 {
     // Used in TabbedPageDemoPage, CarouselPageDemoPage & FlyoutPageDemoPage.
     public class NamedColor
     {
-        Color? _color;
+        Color _color = Colors.Transparent;
         string _name = "";
         float _hue;
         float _saturation;
@@ -22,7 +18,7 @@ namespace Tutorials.Models
         {
             get
             {
-                return _color!.Red ;
+                return _color.Red ;
             }
         }
 
