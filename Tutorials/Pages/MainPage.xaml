@@ -7,9 +7,10 @@
              x:DataType="viewmodel:MainViewModel"
              >
 
-   
-    <ContentView Padding="20">
-        <TableView Intent="Menu">
+    <VerticalStackLayout Margin="20" Spacing="10">
+
+        <ContentView Padding="20">
+            <TableView Intent="Menu">
             <TableRoot>
                 <TableSection Title="Menu">
 
@@ -60,5 +61,27 @@
                 </TableSection>
             </TableRoot>
         </TableView>
-    </ContentView>
+        </ContentView>
+        <ImageButton Source="g7.png">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <VisualState.Setters>
+                            <Setter Property="Scale"
+                                 Value="1" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <VisualState.Setters>
+                            <Setter Property="Scale"
+                                 Value="0.8" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="PointerOver" />
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </VisualStateManager.VisualStateGroups>
+    </ImageButton>
+    </VerticalStackLayout>
 </ContentPage>
