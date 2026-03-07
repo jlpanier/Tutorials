@@ -15,7 +15,22 @@
                               Detail="Changement progressive de la couleur de fond d'écran"
                               Command="{Binding NavigateCommand}"
                               CommandParameter="{x:Type views:CustomAnimationPage}" />
-
+                <TextCell Text="Furtive Animation"
+                           Detail="Animation d'une image furtive"
+                           Command="{Binding NavigateCommand}"
+                           CommandParameter="{x:Type views:FadePage}" />
+                <TextCell Text="Rotation Animation"
+                           Detail="Animation d'une image rotative"
+                           Command="{Binding NavigateCommand}"
+                           CommandParameter="{x:Type views:RotatePage}" />
+                <TextCell Text="Dimension Animation"
+                           Detail="Animation d'un changement d'échelle"
+                           Command="{Binding NavigateCommand}"
+                           CommandParameter="{x:Type views:ScalePage}" />
+                <TextCell Text="Transfuge Animation"
+                           Detail="Animation d'une image en mouvement"
+                           Command="{Binding NavigateCommand}"
+                           CommandParameter="{x:Type views:TranslatePage}" />
             </TableSection>
         </TableRoot>
     </TableView>
