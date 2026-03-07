@@ -72,9 +72,9 @@
 	<ItemGroup>
 	  <ProjectReference Include="..\Business\Business.csproj" />
 	  <ProjectReference Include="..\Common\Common.csproj" />
-	  <ProjectReference Include="..\CurieXplorePays\CurieXplorePays.csproj" />
 	  <ProjectReference Include="..\Repository\Repository.csproj" />
 	  <ProjectReference Include="..\RestCountries\RestCountries.csproj" />
+	  <ProjectReference Include="..\WS.Countries\WS.Countries.csproj" />
 	</ItemGroup>
 
 </Project>

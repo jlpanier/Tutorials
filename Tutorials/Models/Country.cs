@@ -1,6 +1,5 @@
 ﻿using Common;
-using CurieXplorePays;
-using RestCountries;
+using WS.Countries;
 
 namespace Tutorials.Models
 {
@@ -171,7 +170,7 @@ namespace Tutorials.Models
         public string Website { get; private set; } = "";
 
         /// <summary>
-        /// True s’il existe une fiche CurieXplore
+        /// True s’il existe une fiche CountryInterfaces
         /// </summary>
         public bool curiexplore { get; private set; } = false;
 
@@ -227,7 +226,7 @@ namespace Tutorials.Models
         public static async Task<List<Country>> Get()
         {
             var result = new List<Country>();
-            var items = await CurieXplore.Get();
+            var items = await CountryInterfaces.Get();
             items.ForEach(_=>result.Add(new Country(_)));
             var data = await RestCountries.RestCountries.Get();
             data.ForEach(d =>
@@ -248,7 +247,7 @@ namespace Tutorials.Models
         {
         }
 
-        public Country(CurieXploreData data)
+        public Country(WS.Countries.Country data)
         {
             Iso2 = data.iso2;
             Iso3 = data.iso3;

@@ -1,8 +1,10 @@
 <Solution>
   <Project Path="Business/Business.csproj" />
   <Project Path="Common/Common.csproj" />
-  <Project Path="CurieXplorePays/CurieXplorePays.csproj" />
   <Project Path="Repository/Repository.csproj" />
   <Project Path="RestCountries/RestCountries.csproj" />
-  <Project Path="Tutorials/Tutorials.csproj" Id="40be0382-591b-43d8-aa08-1804869eb744" />
+  <Project Path="Tutorials/Tutorials.csproj" Id="40be0382-591b-43d8-aa08-1804869eb744">
+    <Deploy Solution="Debug|*" />
+  </Project>
+  <Project Path="WS.Countries/WS.Countries.csproj" Id="1a162139-27f3-449a-a4e9-c659ae6a00e3" />
 </Solution>
