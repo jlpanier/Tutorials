@@ -27,7 +27,7 @@ public partial class ProgressBarDemoPage : ContentPage
     void OnTimerTick(object? sender, EventArgs e)
     {
         progressBar.Progress += 0.01;
-        if (progressBar.Progress == 1)
+        if (progressBar.Progress == 1 && timer!=null)
             timer.Stop();
     }
 }

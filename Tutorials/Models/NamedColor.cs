@@ -10,19 +10,19 @@ namespace Tutorials.Models
     // Used in TabbedPageDemoPage, CarouselPageDemoPage & FlyoutPageDemoPage.
     public class NamedColor
     {
-        Color _color;
-        string _name;
+        Color? _color;
+        string _name = "";
         float _hue;
         float _saturation;
         float _luminosity;
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         public float Red
         {
             get
             {
-                return _color.Red;
+                return _color!.Red ;
             }
         }
 
@@ -30,7 +30,7 @@ namespace Tutorials.Models
         {
             get
             {
-                return _color.Blue;
+                return _color!.Blue;
             }
         }
 
@@ -38,7 +38,7 @@ namespace Tutorials.Models
         {
             get
             {
-                return _color.Blue;
+                return _color!.Blue;
             }
         }
 
@@ -87,7 +87,7 @@ namespace Tutorials.Models
             }
         }
 
-        public Color Color
+        public Color? Color
         {
             get
             {
@@ -95,10 +95,10 @@ namespace Tutorials.Models
             }
             set
             {
-                if (_color != value)
+                if (_color!=null && _color != value)
                 {
                     _color = value;
-                    _hue = _color.GetHue();
+                    _hue = _color!.GetHue();
                     _saturation = _color.GetSaturation();
                     _luminosity = _color.GetLuminosity();
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Hue"));

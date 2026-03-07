@@ -32,7 +32,7 @@ namespace Tutorials.Models
     }
     public class PairInfo
     {
-        public string PairName { get; set; }
+        public string PairName { get; set; } = "";
         public double LatestPrice { get; set; }
         public double HighPriceValue { get; set; }
         public double LowPriceValue { get; set; }
@@ -98,7 +98,7 @@ namespace Tutorials.Models
         {
             get
             {
-                IList<HistoricalPrice> prices = null;
+                IList<HistoricalPrice>? prices = null;
                 if (!framedData.TryGetValue(frame, out prices))
                 {
                     prices = GeneratePrices(frame);

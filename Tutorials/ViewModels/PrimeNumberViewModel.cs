@@ -13,7 +13,7 @@ namespace Tutorials.ViewModels
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
@@ -34,9 +34,9 @@ namespace Tutorials.ViewModels
         }
         bool isRefreshing;
 
-        public ObservableCollection<Models.Number> Items 
+        public ObservableCollection<Number> Items 
         { 
-            get => _items; 
+            get => _items ?? new ObservableCollection<Number>(); 
             private set
             {
                 _items = value;

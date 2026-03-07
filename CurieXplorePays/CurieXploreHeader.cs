@@ -9,6 +9,6 @@ namespace CurieXplorePays
     {
         public int total_count { get; set; }
 
-        public List<CurieXploreData> results { get; set; }
+        public List<CurieXploreData>? results { get; set; }
     }
 }

@@ -21,7 +21,7 @@ namespace RestCountries
             return result;
         }
 
-        private static async Task<List<RestCountriesData>>? Call()
+        private static async Task<List<RestCountriesData>?> Call()
         {
             try
             {
@@ -32,6 +32,10 @@ namespace RestCountries
                     response.EnsureSuccessStatusCode(); // Throws exception if the status code is not 2xx
 
                     var answer = await response.Content.ReadAsStringAsync();
+                    if (string.IsNullOrWhiteSpace(answer))
+                    {
+                        throw new ArgumentNullException();
+                    }
                     return JsonSerializer.Deserialize<List<RestCountriesData>>(answer);
                 }
             }
@@ -39,7 +43,7 @@ namespace RestCountries
             {
                 return new List<RestCountriesData>();
             }
-            catch (JsonException e)
+            catch (JsonException)
             {
                 return new List<RestCountriesData>();
             }
